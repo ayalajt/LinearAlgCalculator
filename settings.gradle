@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name='CMSC_355_G18_CSBuddy'
