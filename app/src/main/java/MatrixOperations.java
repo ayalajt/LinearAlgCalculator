@@ -3,5 +3,5 @@
 / InitDate: 10/11/19
 */
 
-public class MatrixAddition {
+public class MatrixOperations {
 }
