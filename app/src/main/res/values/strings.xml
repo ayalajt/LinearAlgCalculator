@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">CMSC_355_G18_CSBuddy</string>
+
+    <string name="oneButton">1</string>
+    <string name="twoButton">2</string>
+    <string name="threeButton">3</string>
+    <string name="fourButton">4</string>
+    <string name="fiveButton">5</string>
+    <string name="sixButton">6</string>
+    <string name="sevenButton">7</string>
+    <string name="eightButton">8</string>
+    <string name="nineButton">9</string>
+    <string name="zeroButton">0</string>
+    <string name="plusButton">+</string>
+    <string name="minusButton">-</string>
+    <string name="multiplyButton">*</string>
+    <string name="divideButton">/</string>
+    <string name="equalsButton">=</string>
+    <string name="clearButton">CLEAR</string>
+    <string name="inputText">0</string>
+    <string name="answerText">Answer Box</string>
+    <string name="aButton">A</string>
+    <string name="bButton">B</string>
+    <string name="cButton">C</string>
+    <string name="dButton">D</string>
+    <string name="eButton">E</string>
+    <string name="fButton">F</string>
+
+    <string-array name="bases">
+        <item>Dec</item>
+        <item>Bin</item>
+        <item>Hex</item>
+    </string-array>
 </resources>

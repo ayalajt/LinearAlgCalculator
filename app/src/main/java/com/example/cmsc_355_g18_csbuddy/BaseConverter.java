@@ -1,4 +1,4 @@
-/*
+package com.example.cmsc_355_g18_csbuddy;/*
 Author: Cole Delinski
 InitDate: 10/10/19
  */
