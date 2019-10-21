@@ -25,6 +25,24 @@
     <string name="dButton">D</string>
     <string name="eButton">E</string>
     <string name="fButton">F</string>
+    <string name="decimalButton">.</string>
+    <string name="negateButton">( - )</string>
+    <string name="enterButton">ENTER</string>
+    <string name="deleteButton">DELETE</string>
+    <string name="inputMessageRow">INPUT MATRIX ROW SIZE:</string>
+    <string name="inputMessageColumn">INPUT MATRIX COLUMN SIZE:</string>
+    <string name="inputMatrixSize">_</string>
+    <string name="MatrixCreated">MATRIX:</string>
+    <string name="MatrixView"></string>
+
+
+
+
+
+
+
+
+
 
     <string-array name="bases">
         <item>Dec</item>

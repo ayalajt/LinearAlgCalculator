@@ -6,4 +6,203 @@
     android:layout_height="match_parent"
     tools:context=".MatrixCalculator">
 
+    <Button
+        android:id="@+id/clearButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/clearButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MatrixCreated" />
+
+    <Button
+        android:id="@+id/deleteButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/deleteButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clearButtonForMatrix" />
+
+    <Button
+        android:id="@+id/plusButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/plusButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/deleteButtonForMatrix" />
+
+    <Button
+        android:id="@+id/enterButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="141dp"
+        android:text="@string/enterButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/negateButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="141dp"
+        android:text="@string/negateButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/decimalButtonForMatrix" />
+
+    <Button
+        android:id="@+id/zeroButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="141dp"
+        android:text="@string/zeroButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/decimalButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginBottom="141dp"
+        android:text="@string/decimalButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/zeroButtonForMatrix" />
+
+    <Button
+        android:id="@+id/twoButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="17dp"
+        android:text="@string/twoButton"
+        app:layout_constraintStart_toEndOf="@+id/oneButtonForMatrix"
+        app:layout_constraintTop_toBottomOf="@+id/fiveButtonForMatrix" />
+
+    <Button
+        android:id="@+id/threeButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="49dp"
+        android:text="@string/threeButton"
+        app:layout_constraintEnd_toStartOf="@+id/plusButtonForMatrix"
+        app:layout_constraintTop_toBottomOf="@+id/sixButtonForMatrix" />
+
+    <Button
+        android:id="@+id/sixButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="49dp"
+        android:text="@string/sixButton"
+        app:layout_constraintEnd_toStartOf="@+id/deleteButtonForMatrix"
+        app:layout_constraintTop_toBottomOf="@+id/nineButtonForMatrix" />
+
+    <Button
+        android:id="@+id/fiveButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="21dp"
+        android:text="@string/fiveButton"
+        app:layout_constraintStart_toEndOf="@+id/fourButtonForMatrix"
+        app:layout_constraintTop_toBottomOf="@+id/eightButtonForMatrix" />
+
+    <Button
+        android:id="@+id/fourButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="21dp"
+        android:text="@string/fourButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sevenButtonForMatrix" />
+
+    <Button
+        android:id="@+id/oneButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="17dp"
+        android:text="@string/oneButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fourButtonForMatrix" />
+
+    <TextView
+        android:id="@+id/InputMessageForMatrix"
+        android:layout_width="182dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/inputMessageRow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/sevenButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/sevenButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputValueForMatrix" />
+
+    <Button
+        android:id="@+id/eightButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="38dp"
+        android:text="@string/eightButton"
+        app:layout_constraintStart_toEndOf="@+id/sevenButtonForMatrix"
+        app:layout_constraintTop_toBottomOf="@+id/inputValueForMatrix" />
+
+    <Button
+        android:id="@+id/nineButtonForMatrix"
+        android:layout_width="75dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="128dp"
+        android:text="@string/nineButton"
+        app:layout_constraintStart_toEndOf="@+id/eightButtonForMatrix"
+        app:layout_constraintTop_toBottomOf="@+id/MatrixCreated" />
+
+    <TextView
+        android:id="@+id/MatrixCreated"
+        android:layout_width="124dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="52dp"
+        android:text="@string/MatrixCreated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inputValueForMatrix"
+        android:layout_width="185dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="11dp"
+        android:text="@string/inputText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputMessageForMatrix" />
+
+    <TextView
+        android:id="@+id/matrixView"
+        android:layout_width="133dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="14dp"
+        android:text="@string/MatrixView"
+        app:layout_constraintTop_toBottomOf="@+id/MatrixCreated"
+        tools:layout_editor_absoluteX="233dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
