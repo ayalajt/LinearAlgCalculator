@@ -78,28 +78,28 @@ public class JavaCalculation {
     operand1 + operand2
      */
     private void add() {
-        result = operand1 + operand2;
+        //result = operand1 + operand2;
     }
 
     /*
     operand1 - operand2
      */
     private void subtract() {
-        result = operand1 - operand2;
+        //result = operand1 - operand2;
     }
 
     /*
     operand1 * operand2
      */
     private void multiply() {
-        result = operand1 * operand2;
+        //result = operand1 * operand2;
     }
 
     /*
     operand1 / operand2
      */
     private void divide() {
-        result = operand1 / operand2;
+        //result = operand1 / operand2;
     }
 
     public Number getResult() {
