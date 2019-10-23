@@ -384,30 +384,36 @@ public class HomeCalculator extends AppCompatActivity {
                     if(outputBases.getSelectedItem().toString().equals("Bin")){
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + inputText.getText().toString());
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + inputText.getText().toString());
+                            inputText.setText("");
                         }
                     }
 
                     else if(outputBases.getSelectedItem().toString().equals("Dec")){
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + BaseConverter.binaryToDecimal(inputText.getText().toString()));
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.binaryToDecimal(inputText.getText().toString()));
+                            inputText.setText("");
                         }
                     }
 
                     else{
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + BaseConverter.binaryToHex(inputText.getText().toString()));
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.binaryToHex(inputText.getText().toString()));
+                            inputText.setText("");
                         }
                     }
 
@@ -418,30 +424,36 @@ public class HomeCalculator extends AppCompatActivity {
                     if(outputBases.getSelectedItem().toString().equals("Bin")){
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + BaseConverter.decimalToBinary(inputText.getText().toString()));
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.decimalToBinary(inputText.getText().toString()));
+                            inputText.setText("");
                         }
                     }
 
                     else if(outputBases.getSelectedItem().toString().equals("Dec")){
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + inputText.getText().toString());
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + inputText.getText().toString());
+                            inputText.setText("");
                         }
                     }
 
                     else{
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + BaseConverter.decimalToHex(inputText.getText().toString()));
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.decimalToHex(inputText.getText().toString()));
+                            inputText.setText("");
                         }
                     }
 
@@ -452,30 +464,36 @@ public class HomeCalculator extends AppCompatActivity {
                     if(outputBases.getSelectedItem().toString().equals("Bin")){
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + BaseConverter.hexToBinary(inputText.getText().toString()));
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.hexToBinary(inputText.getText().toString()));
+                            inputText.setText("");
                         }
                     }
 
                     else if(outputBases.getSelectedItem().toString().equals("Dec")){
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + BaseConverter.hexToDecimal(inputText.getText().toString()));
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.hexToDecimal(inputText.getText().toString()));
+                            inputText.setText("");
                         }
                     }
 
                     else{
                         if(answerText.getText().toString().equals("Answer Box")){
                             answerText.setText(inputText.getText().toString() + " = " + inputText.getText().toString());
+                            inputText.setText("");
                         }
 
                         else{
                             answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + inputText.getText().toString());
+                            inputText.setText("");
                         }
                     }
 
