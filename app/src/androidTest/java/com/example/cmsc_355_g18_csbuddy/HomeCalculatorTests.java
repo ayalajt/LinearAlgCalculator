@@ -39,7 +39,7 @@ public class HomeCalculatorTests {
 
     @Rule public final ActivityTestRule<HomeCalculator> main= new ActivityTestRule<>(HomeCalculator.class);
 
-
+    //Test for scenario Decimal --> Decimal in the Decimal to Hexadecimal Conversion User Story
     @Test
     public void decimalToDecimalTest(){
         onView(withId(R.id.oneButton)).perform(click());
@@ -50,6 +50,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("17 = 17")));
     }
 
+    //Test for scenario Decimal --> Binary in the Binary to Decimal Conversion User Story
     @Test
     public void decimalToBinaryTest(){
         onView(withId(R.id.outputBases)).perform(click());
@@ -65,6 +66,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("26333 = 110011011011101")));
     }
 
+    //Test for scenario Decimal --> Hexadecimal in the Decimal to Hexadecimal Conversion User Story
     @Test
     public void decimalToHexTest(){
         onView(withId(R.id.outputBases)).perform(click());
@@ -82,6 +84,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("1928374 = 1D6CB6")));
     }
 
+    //Test for scenario Binary --> Decimal in the Binary to Decimal Conversion User Story
     @Test
     public void binaryToDecimalTest(){
         onView(withId(R.id.inputBases)).perform(click());
@@ -98,6 +101,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("110010 = 50")));
     }
 
+    //Test for scenario Binary --> Binary in the Binary to Decimal Conversion User Story
     @Test
     public void binaryToBinaryTest(){
         onView(withId(R.id.inputBases)).perform(click());
@@ -114,6 +118,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("1001 = 1001")));
     }
 
+    //Test for scenario Binary --> Hexadecimal in the Hexadecimal to Binary Conversion User Story
     @Test
     public void binaryToHexTest(){
         onView(withId(R.id.inputBases)).perform(click());
@@ -133,7 +138,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("1011110 = 5E")));
     }
 
-
+    //Test for scenario Hexadecimal --> Decimal in the Decimal to Hexadecimal Conversion User Story
     @Test
     public void hexToDecimalTest(){
         onView(withId(R.id.inputBases)).perform(click());
@@ -150,6 +155,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("ABC123 = 11256099")));
     }
 
+    //Test for scenario Hexadecimal --> Binary in the Hexadecimal to Binary Conversion User Story
     @Test
     public void hexToBinaryTest(){
         onView(withId(R.id.inputBases)).perform(click());
@@ -165,6 +171,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("E4C = 111001001100")));
     }
 
+    //Test for scenario Hexadecimal --> Hexadecimal in the Hexadecimal to Binary Conversion User Story
     @Test
     public void hexToHexTest(){
         onView(withId(R.id.inputBases)).perform(click());
