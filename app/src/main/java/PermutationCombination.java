@@ -1,21 +1,19 @@
 import android.os.Bundle;
-import Java.util.Scanner;
+import android.widget.TextView;
 
 /*
 /  Author: Mark Groves
 /  Init Date: 10/9/19
 */
 
-
-public class ComputePermutations {
+public class PermutationCombination {
 
     public static void main(String[] args) {
         boolean repeat;
 
         // C or P choice from user
         // maybe replace with buttons
-        Scanner in = new Scanner(System.in);
-        String user_in = in.next();
+        String user_in = "";
 
         // comb
         if (user_in.equals("C")){
@@ -42,5 +40,4 @@ public class ComputePermutations {
     private static int nPr(int n, int r) {
         return (factorial(n) / factorial(n - r));
     }
-
 }
