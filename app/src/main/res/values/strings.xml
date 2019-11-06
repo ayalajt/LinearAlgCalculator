@@ -35,6 +35,13 @@
     <string name="MatrixCreated">MATRIX:</string>
     <string name="MatrixView"></string>
 
+    <string name="repTextView">Repetition</string>
+    <string name="combRadioButton">Combination</string>
+    <string name="permRadioButton">Permutation</string>
+    <string name="choose">choose</string>
+    <string name="n">N</string>
+    <string name="r">R</string>
+    <string name="submitButton">Submit</string>
 
 
 
