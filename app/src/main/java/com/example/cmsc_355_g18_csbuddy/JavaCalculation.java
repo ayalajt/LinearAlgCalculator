@@ -8,8 +8,6 @@ InitDate:10/9/19
  */
 public class JavaCalculation implements JavaArithmetic {
 
-    public enum DataTypes { DOUBLE, FLOAT, INT, LONG, SHORT}
-
     private Number operand1;
     private Number operand2;
 
