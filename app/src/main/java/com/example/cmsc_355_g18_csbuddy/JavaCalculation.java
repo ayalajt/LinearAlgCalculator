@@ -2,10 +2,13 @@ package com.example.cmsc_355_g18_csbuddy;
 
 import android.graphics.Path;
 
-/*
-Author  :Sean Stitzer
-InitDate:10/9/19
- */
+/*****************************************************************
+ File       :JavaCalculation
+ Description:Generates an object consisting of two flags and two numbers with methods to perform
+             basic arithmetic on both numbers based on the flags present
+ Author     :Sean Stitzer
+ Created    :10/9/19
+ *****************************************************************/
 public class JavaCalculation implements JavaArithmetic {
 
     private Number operand1;
@@ -20,6 +23,13 @@ public class JavaCalculation implements JavaArithmetic {
         operand2 = approxNumByType(flag2, in2);
     }
 
+    /*****************************************************************
+     Function    :approxNumByType
+     Description :It takes a Number containing raw user input and approximates it to an initial value
+                 based off of the data type
+     Input       :a data type to cast the number as, a raw value encapsulated in a Number obj
+     Output      :a Number obj containing the approximate value
+     *****************************************************************/
     private Number approxNumByType(DataTypes t, Number n) {
         if (t == DataTypes.DOUBLE)
             return n.doubleValue();
@@ -38,28 +48,24 @@ public class JavaCalculation implements JavaArithmetic {
     @Override
     public void add() {
         result = operand1.longValue() + operand2.longValue();
-        result = approxNumByType(resultType, result);
     }
 
     @Override
     public void subtract() {
         result = operand1.longValue() - operand2.longValue();
-        result = approxNumByType(resultType, result);
     }
 
     @Override
     public void multiply() {
         result = operand1.longValue() * operand2.longValue();
-        result = approxNumByType(resultType, result);
     }
 
     @Override
     public void divide() {
-        result = operand1.longValue() + operand2.longValue();
-        result = approxNumByType(resultType, result);
+        result = operand1.longValue() / operand2.longValue();
     }
 
     public Number getResult() {
-        return result;
+        return approxNumByType(resultType, result);
     }
 }
