@@ -43,6 +43,11 @@
     <string name="r">R</string>
     <string name="submitButton">Submit</string>
 
+    <string name="matrixTab">Matrix</string>
+    <string name="permCombTab">Perm/Comb</string>
+    <string name="truthTab">Truth</string>
+    <string name="javaTab">Java</string>
+    <string name="calcTab">Calc</string>
 
 
 

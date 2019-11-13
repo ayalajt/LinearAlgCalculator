@@ -1,42 +1,54 @@
+package com.example.cmsc_355_g18_csbuddy;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import android.widget.RadioGroup;
-import android.widget.RadioButton;
 import android.widget.Button;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.cmsc_355_g18_csbuddy.R;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.fragment.app.Fragment;
+import android.view.LayoutInflater;
+
 
 /*
 /  Author: Mark Groves
 /  Init Date: 10/9/19
 */
 
-public class PermutationCombination extends AppCompatActivity {
+public class PermutationCombination extends Fragment{
 
-    private RadioGroup radioGroup;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compute_permutations);
+    public View onCreateView(
+                @NonNull LayoutInflater inflater, ViewGroup container,
+                Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.activity_compute_permutations, container, false);
 
-        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
-        RadioButton combRadioButton = (RadioButton) findViewById(R.id.combRadioButton);
-        RadioButton permRadioButton = (RadioButton) findViewById(R.id.permRadioButton);
-        final ToggleButton repetitionToggleButton = (ToggleButton) findViewById(R.id.repetitionButton);
-        final EditText editText_n = (EditText) findViewById(R.id.editText3);
-        final EditText editText_r = (EditText) findViewById(R.id.editText4);
-        Button submitButton = (Button) findViewById(R.id.submitButton);
-        final TextView textView1 = (TextView) findViewById(R.id.textViewRepetition); // repetition
-        final TextView textView2 = (TextView) findViewById(R.id.chooseTextView); // choose
+
+        final RadioGroup radioGroup = (RadioGroup) root.findViewById(R.id.radioGroup);
+        RadioButton combRadioButton = (RadioButton) root.findViewById(R.id.combRadioButton);
+        RadioButton permRadioButton = (RadioButton) root.findViewById(R.id.permRadioButton);
+        final ToggleButton repetitionToggleButton = (ToggleButton) root.findViewById(R.id.repetitionButton);
+        final EditText editText_n = (EditText) root.findViewById(R.id.editText3);
+        final EditText editText_r = (EditText) root.findViewById(R.id.editText4);
+        Button submitButton = (Button) root.findViewById(R.id.submitButton);
+        final TextView textView1 = (TextView) root.findViewById(R.id.textViewRepetition); // repetition
+        final TextView textView2 = (TextView) root.findViewById(R.id.chooseTextView); // choose
 
         radioGroup.clearCheck(); // make buttons initially clear
 
@@ -53,7 +65,7 @@ public class PermutationCombination extends AppCompatActivity {
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 if (selectedId == -1) {
                     // no button selected
-                    Toast.makeText(PermutationCombination.this, "No answer has been selected", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "No answer has been selected", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     // combination
@@ -83,6 +95,8 @@ public class PermutationCombination extends AppCompatActivity {
                 }
             }
         });
+
+        return root;
     }
 
     /* arr[]  ---> Input Array
