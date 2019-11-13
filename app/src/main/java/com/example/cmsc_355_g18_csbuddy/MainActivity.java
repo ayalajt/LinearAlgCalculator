@@ -1,6 +1,7 @@
 package com.example.cmsc_355_g18_csbuddy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import com.example.cmsc_355_g18_csbuddy.main.SectionsPagerAdapter;
+import com.google.android.material.tabs.TabLayout;
 
 public class HomeCalculator extends AppCompatActivity {
 
@@ -17,6 +19,12 @@ public class HomeCalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_calculator);
+        SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
+        ViewPager viewPager = findViewById(R.id.view_pager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+        TabLayout tabs = findViewById(R.id.tabLayout);
+        tabs.setupWithViewPager(viewPager);
+
 
         final Spinner inputBases = findViewById(R.id.inputBases);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.bases, android.R.layout.simple_spinner_item);
