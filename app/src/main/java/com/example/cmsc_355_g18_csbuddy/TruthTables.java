@@ -1,37 +1,46 @@
 package com.example.cmsc_355_g18_csbuddy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Button;
 import android.widget.EditText;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.lifecycle.Observer;
+import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
 
-public class TruthTables extends AppCompatActivity {
+public class TruthTables extends Fragment {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_truth_tables);
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.activity_truth_tables, container, false);
 
-        final TextView ttInputText = (TextView) findViewById(R.id.ttInputText);
-        final TextView ttOutputText = (TextView) findViewById(R.id.ttOutputText);
+
+        final TextView ttInputText = (TextView) root.findViewById(R.id.ttInputText);
+        final TextView ttOutputText = (TextView) root.findViewById(R.id.ttOutputText);
 
         //Button deleteButtonForTT = (Button) findViewById(R.id.deleteButtonForTT);
-        Button xorButton = (Button) findViewById(R.id.xorButton);
-        Button orButton = (Button) findViewById(R.id.orButton);
-        Button andButton = (Button) findViewById(R.id.andButton);
-        Button pButton = (Button) findViewById(R.id.pButton);
-        Button qButton = (Button) findViewById(R.id.qButton);
-        Button notButton = (Button) findViewById(R.id.notButton);
-        Button leftparenButton = (Button) findViewById(R.id.leftparenButton);
-        Button rightparenButton = (Button) findViewById(R.id.rightparenButton);
-        Button clearButtonForTT = (Button) findViewById(R.id.clearButtonForTT);
-        Button ifButton = (Button) findViewById(R.id.ifButton);
-        Button iffButton = (Button) findViewById(R.id.iffButton);
-        Button submitButtonForTT = (Button) findViewById(R.id.submitButtonForTT);
+        Button xorButton = (Button) root.findViewById(R.id.xorButton);
+        Button orButton = (Button) root.findViewById(R.id.orButton);
+        Button andButton = (Button) root.findViewById(R.id.andButton);
+        Button pButton = (Button) root.findViewById(R.id.pButton);
+        Button qButton = (Button) root.findViewById(R.id.qButton);
+        Button notButton = (Button) root.findViewById(R.id.notButton);
+        Button leftparenButton = (Button) root.findViewById(R.id.leftparenButton);
+        Button rightparenButton = (Button) root.findViewById(R.id.rightparenButton);
+        Button clearButtonForTT = (Button) root.findViewById(R.id.clearButtonForTT);
+        Button ifButton = (Button) root.findViewById(R.id.ifButton);
+        Button iffButton = (Button) root.findViewById(R.id.iffButton);
+        Button submitButtonForTT = (Button) root.findViewById(R.id.submitButtonForTT);
 
 
         xorButton.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +171,7 @@ public class TruthTables extends AppCompatActivity {
 
         });
 
+        return root;
     }
 
 }

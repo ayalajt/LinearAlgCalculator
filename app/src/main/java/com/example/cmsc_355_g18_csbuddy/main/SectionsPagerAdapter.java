@@ -13,6 +13,7 @@ import com.example.cmsc_355_g18_csbuddy.JavaCalculation;
 import com.example.cmsc_355_g18_csbuddy.MatrixCalculator;
 import com.example.cmsc_355_g18_csbuddy.PermutationCombination;
 import com.example.cmsc_355_g18_csbuddy.R;
+import com.example.cmsc_355_g18_csbuddy.TruthTables;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -41,6 +42,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 PermutationCombination permutationCombination = new PermutationCombination();
                 return permutationCombination;
+            case 3:
+                TruthTables truthTables = new TruthTables();
+                return truthTables;
             default:
                 return null;
         }
@@ -54,6 +58,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 4;
     }
 }
