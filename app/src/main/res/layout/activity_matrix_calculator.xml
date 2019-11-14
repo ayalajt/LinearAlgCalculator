@@ -10,38 +10,38 @@
         android:id="@+id/clearButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/clearButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MatrixCreated" />
+        app:layout_constraintBottom_toTopOf="@+id/minusButtonForMatrix"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/deleteButtonForMatrix"
+        android:id="@+id/minusButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/deleteButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clearButtonForMatrix" />
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/minusButton"
+        app:layout_constraintBottom_toTopOf="@+id/plusButtonForMatrix"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/plusButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/plusButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deleteButtonForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/enterButtonForMatrix"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/enterButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="141dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="74dp"
         android:text="@string/enterButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -50,10 +50,12 @@
         android:id="@+id/negateButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="141dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="74dp"
         android:text="@string/negateButton"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/enterButtonForMatrix"
         app:layout_constraintStart_toEndOf="@+id/decimalButtonForMatrix" />
 
     <Button
@@ -61,7 +63,7 @@
         android:layout_width="75dp"
         android:layout_height="60dp"
         android:layout_marginStart="18dp"
-        android:layout_marginBottom="141dp"
+        android:layout_marginBottom="74dp"
         android:text="@string/zeroButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -70,8 +72,8 @@
         android:id="@+id/decimalButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginBottom="141dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="74dp"
         android:text="@string/decimalButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/zeroButtonForMatrix" />
@@ -80,69 +82,71 @@
         android:id="@+id/twoButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/twoButton"
-        app:layout_constraintStart_toEndOf="@+id/oneButtonForMatrix"
-        app:layout_constraintTop_toBottomOf="@+id/fiveButtonForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/decimalButtonForMatrix"
+        app:layout_constraintEnd_toStartOf="@+id/threeButtonForMatrix" />
 
     <Button
         android:id="@+id/threeButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="49dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/threeButton"
-        app:layout_constraintEnd_toStartOf="@+id/plusButtonForMatrix"
-        app:layout_constraintTop_toBottomOf="@+id/sixButtonForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/negateButtonForMatrix"
+        app:layout_constraintEnd_toStartOf="@+id/plusButtonForMatrix" />
 
     <Button
         android:id="@+id/sixButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginTop="21dp"
-        android:layout_marginEnd="49dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/sixButton"
-        app:layout_constraintEnd_toStartOf="@+id/deleteButtonForMatrix"
-        app:layout_constraintTop_toBottomOf="@+id/nineButtonForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/threeButtonForMatrix"
+        app:layout_constraintStart_toEndOf="@+id/fiveButtonForMatrix" />
 
     <Button
         android:id="@+id/fiveButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/fiveButton"
-        app:layout_constraintStart_toEndOf="@+id/fourButtonForMatrix"
-        app:layout_constraintTop_toBottomOf="@+id/eightButtonForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/twoButtonForMatrix"
+        app:layout_constraintStart_toEndOf="@+id/fourButtonForMatrix" />
 
     <Button
         android:id="@+id/fourButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="21dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/fourButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sevenButtonForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/oneButtonForMatrix"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/oneButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="17dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/oneButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fourButtonForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/zeroButtonForMatrix"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/InputMessageForMatrix"
-        android:layout_width="182dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="202dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="96dp"
         android:text="@string/inputMessageRow"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -151,58 +155,65 @@
         android:layout_width="75dp"
         android:layout_height="60dp"
         android:layout_marginStart="18dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/sevenButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputValueForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/fourButtonForMatrix"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/eightButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="38dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/eightButton"
-        app:layout_constraintStart_toEndOf="@+id/sevenButtonForMatrix"
-        app:layout_constraintTop_toBottomOf="@+id/inputValueForMatrix" />
+        app:layout_constraintBottom_toTopOf="@+id/fiveButtonForMatrix"
+        app:layout_constraintStart_toEndOf="@+id/sevenButtonForMatrix" />
 
     <Button
         android:id="@+id/nineButtonForMatrix"
         android:layout_width="75dp"
         android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/nineButton"
-        app:layout_constraintStart_toEndOf="@+id/eightButtonForMatrix"
-        app:layout_constraintTop_toBottomOf="@+id/MatrixCreated" />
+        app:layout_constraintBottom_toTopOf="@+id/sixButtonForMatrix"
+        app:layout_constraintStart_toEndOf="@+id/eightButtonForMatrix" />
 
     <TextView
         android:id="@+id/MatrixCreated"
-        android:layout_width="124dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="52dp"
+        android:layout_width="139dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/MatrixCreated"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/inputValueForMatrix"
-        android:layout_width="185dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="11dp"
+        android:layout_width="202dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="21dp"
         android:text="@string/inputText"
+        android:textColor="#000000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InputMessageForMatrix" />
 
     <TextView
         android:id="@+id/matrixView"
-        android:layout_width="133dp"
+        android:layout_width="139dp"
         android:layout_height="69dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/MatrixView"
-        app:layout_constraintTop_toBottomOf="@+id/MatrixCreated"
-        tools:layout_editor_absoluteX="233dp" />
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MatrixCreated" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
