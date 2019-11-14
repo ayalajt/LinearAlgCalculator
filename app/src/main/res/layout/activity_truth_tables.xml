@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TruthTables">
+
+        <Button
+            android:id="@+id/deleteButtonForTT"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="DELETE"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+        <Button
+            android:id="@+id/xorButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="⊕"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+        <Button
+            android:id="@+id/orButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="2dp"
+            android:text="∨"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/ifButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9" />
+
+        <Button
+            android:id="@+id/andButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="4dp"
+            android:text="∧"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@+id/notButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+        <Button
+            android:id="@+id/pButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="p"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/andButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/qButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="q"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/orButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/notButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="¬"
+            android:textSize="26sp"
+            app:layout_constraintBottom_toTopOf="@+id/xorButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline7" />
+
+        <Button
+            android:id="@+id/leftparenButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="("
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline12"
+            app:layout_constraintStart_toStartOf="@+id/guideline11"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/rightparenButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text=")"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@+id/guideline14"
+            app:layout_constraintStart_toStartOf="@+id/guideline13"
+            app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+        <Button
+            android:id="@+id/clearButtonForTT"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="12dp"
+            android:text="CLEAR"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/submitButtonForTT"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3" />
+
+        <TextView
+            android:id="@+id/ttInputText"
+            android:layout_width="274dp"
+            android:layout_height="53dp"
+            android:layout_marginBottom="40dp"
+            android:text=" "
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/ttOutputText"
+            app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+        <TextView
+            android:id="@+id/ttOutputText"
+            android:layout_width="372dp"
+            android:layout_height="258dp"
+            android:text="truth table will be generated here"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3"
+            app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+        <Button
+            android:id="@+id/submitButtonForTT"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:layout_marginBottom="16dp"
+            android:text="SUBMIT"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/ttOutputText"
+            app:layout_constraintEnd_toStartOf="@+id/guideline3" />
+
+        <Button
+            android:id="@+id/ifButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="→"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/iffButton"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10" />
+
+        <Button
+            android:id="@+id/iffButton"
+            android:layout_width="75dp"
+            android:layout_height="49dp"
+            android:text="↔"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline16"
+            app:layout_constraintEnd_toStartOf="@+id/guideline10"
+            app:layout_constraintStart_toStartOf="@+id/guideline9" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="notButton,ifButton,iffButton,xorButton,qButton,rightparenButton,deleteButtonForTT,clearButtonForTT,leftparenButton,orButton,andButton,pButton" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="391dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="391dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="229dp" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="ttInputText,ttOutputText,submitButtonForTT" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="left" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="471dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="91dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="300dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="186dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="205dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="133dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="114dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="39dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="79dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="29dp" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="top" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

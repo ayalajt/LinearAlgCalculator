@@ -1,310 +1,281 @@
 package com.example.cmsc_355_g18_csbuddy;
-
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.fragment.app.Fragment;
+import android.view.LayoutInflater;
 
-public class HomeCalculator extends AppCompatActivity {
+public class HomeCalculator extends Fragment {
+    public View onCreateView(
+            @NonNull LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.activity_home_calculator, container, false);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home_calculator);
-
-        final Spinner inputBases = findViewById(R.id.inputBases);
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this, R.array.bases, android.R.layout.simple_spinner_item);
+        final Spinner inputBases = root.findViewById(R.id.inputBases);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.bases, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         inputBases.setAdapter(adapter1);
 
-        final Spinner outputBases = findViewById(R.id.outputBases);
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.bases, android.R.layout.simple_spinner_item);
+        final Spinner outputBases = root.findViewById(R.id.outputBases);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getContext(), R.array.bases, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         outputBases.setAdapter(adapter2);
 
-        final TextView inputText = (TextView) findViewById(R.id.inputText);
-        final TextView answerText = (TextView) findViewById(R.id.answerText);
-        Button oneButton = (Button) findViewById(R.id.oneButton);
-        Button twoButton = (Button) findViewById(R.id.twoButton);
-        Button threeButton = (Button) findViewById(R.id.threeButton);
-        Button fourButton = (Button) findViewById(R.id.fourButton);
-        Button fiveButton = (Button) findViewById(R.id.fiveButton);
-        Button sixButton = (Button) findViewById(R.id.sixButton);
-        Button sevenButton = (Button) findViewById(R.id.sevenButton);
-        Button eightButton = (Button) findViewById(R.id.eightButton);
-        Button nineButton = (Button) findViewById(R.id.nineButton);
-        Button zeroButton = (Button) findViewById(R.id.zeroButton);
-        Button aButton = (Button) findViewById(R.id.aButton);
-        Button bButton = (Button) findViewById(R.id.bButton);
-        Button cButton = (Button) findViewById(R.id.cButton);
-        Button dButton = (Button) findViewById(R.id.dButton);
-        Button eButton = (Button) findViewById(R.id.eButton);
-        Button fButton = (Button) findViewById(R.id.fButton);
-        Button plusButton = (Button) findViewById(R.id.plusButton);
-        Button minusButton = (Button) findViewById(R.id.minusButton);
-        Button multiplyButton = (Button) findViewById(R.id.multiplyButton);
-        Button divideButton = (Button) findViewById(R.id.divideButton);
-        Button equalsButton = (Button) findViewById(R.id.equalsButton);
-        Button clearButton = (Button) findViewById(R.id.clearButton);
+        final TextView inputText = (TextView) root.findViewById(R.id.inputText);
+        final TextView answerText = (TextView) root.findViewById(R.id.answerText);
+        Button oneButton = (Button) root.findViewById(R.id.oneButton);
+        Button twoButton = (Button) root.findViewById(R.id.twoButton);
+        Button threeButton = (Button) root.findViewById(R.id.threeButton);
+        Button fourButton = (Button) root.findViewById(R.id.fourButton);
+        Button fiveButton = (Button) root.findViewById(R.id.fiveButton);
+        Button sixButton = (Button) root.findViewById(R.id.sixButton);
+        Button sevenButton = (Button) root.findViewById(R.id.sevenButton);
+        Button eightButton = (Button) root.findViewById(R.id.eightButton);
+        Button nineButton = (Button) root.findViewById(R.id.nineButton);
+        Button zeroButton = (Button) root.findViewById(R.id.zeroButton);
+        Button aButton = (Button) root.findViewById(R.id.aButton);
+        Button bButton = (Button) root.findViewById(R.id.bButton);
+        Button cButton = (Button) root.findViewById(R.id.cButton);
+        Button dButton = (Button) root.findViewById(R.id.dButton);
+        Button eButton = (Button) root.findViewById(R.id.eButton);
+        Button fButton = (Button) root.findViewById(R.id.fButton);
+        Button plusButton = (Button) root.findViewById(R.id.plusButton);
+        Button minusButton = (Button) root.findViewById(R.id.minusButton);
+        Button multiplyButton = (Button) root.findViewById(R.id.multiplyButton);
+        Button divideButton = (Button) root.findViewById(R.id.divideButton);
+        Button equalsButton = (Button) root.findViewById(R.id.equalsButton);
+        Button clearButton = (Button) root.findViewById(R.id.clearButton);
 
         oneButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("1");
+                } else {
+                    inputText.setText(inputTextStr + "1");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"1");
-                }
-
             }
         });
 
         twoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("2");
+                } else {
+                    inputText.setText(inputTextStr + "2");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"2");
-                }
-
             }
         });
 
         threeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("3");
+                } else {
+                    inputText.setText(inputTextStr + "3");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"3");
-                }
-
-
             }
         });
 
         fourButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("4");
+                } else {
+                    inputText.setText(inputTextStr + "4");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"4");
-                }
-
             }
         });
 
         fiveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("5");
+                } else {
+                    inputText.setText(inputTextStr + "5");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"5");
-                }
-
             }
         });
 
         sixButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("6");
+                } else {
+                    inputText.setText(inputTextStr + "6");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"6");
-                }
-
             }
         });
 
         sevenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("7");
+                } else {
+                    inputText.setText(inputTextStr + "7");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"7");
-                }
-
             }
         });
 
         eightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("8");
+                } else {
+                    inputText.setText(inputTextStr + "8");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"8");
-                }
-
             }
         });
 
         nineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("9");
+                } else {
+                    inputText.setText(inputTextStr + "9");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"9");
-                }
-
             }
         });
 
         zeroButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("0");
+                } else {
+                    inputText.setText(inputTextStr + "0");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"0");
-                }
-
             }
         });
 
         aButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("A");
+                } else {
+                    inputText.setText(inputTextStr + "A");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"A");
-                }
-
             }
         });
 
         bButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("B");
+                } else {
+                    inputText.setText(inputTextStr + "B");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"B");
-                }
-
             }
         });
 
         cButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("C");
+                } else {
+                    inputText.setText(inputTextStr + "C");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"C");
-                }
-
             }
         });
 
         dButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("D");
+                } else {
+                    inputText.setText(inputTextStr + "D");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"D");
-                }
-
             }
         });
 
         eButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("E");
+                } else {
+                    inputText.setText(inputTextStr + "E");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"E");
-                }
-
             }
         });
 
         fButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(inputText.getText().equals("0")){
+                if (inputTextStr.equals("0")) {
                     inputText.setText("F");
+                } else {
+                    inputText.setText(inputTextStr + "F");
                 }
-
-                else{
-                    inputText.setText(inputText.getText()+"F");
-                }
-
             }
         });
 
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String answerTextStr = answerText.getText().toString();
+                String inputTextStr = inputText.getText().toString();
 
-                if(answerText.getText().equals("Answer Box")){
-                    answerText.setText(inputText.getText() + " + ");
+                if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
+                    answerText.setText(inputTextStr + " + ");
                     inputText.setText("");
-                }
-
-                else{
-                    answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " + ");
+                } else {
+                    answerText.setText(answerTextStr + inputTextStr + " + ");
                     inputText.setText("");
                 }
             }
@@ -313,14 +284,14 @@ public class HomeCalculator extends AppCompatActivity {
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String answerTextStr = answerText.getText().toString();
+                String inputTextStr = inputText.getText().toString();
 
-                if(answerText.getText().equals("Answer Box")){
-                    answerText.setText(inputText.getText() + " - ");
+                if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
+                    answerText.setText(inputTextStr + " - ");
                     inputText.setText("");
-                }
-
-                else{
-                    answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " - ");
+                } else {
+                    answerText.setText(answerTextStr + inputTextStr + " - ");
                     inputText.setText("");
                 }
             }
@@ -329,14 +300,14 @@ public class HomeCalculator extends AppCompatActivity {
         multiplyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String answerTextStr = answerText.getText().toString();
+                String inputTextStr = inputText.getText().toString();
 
-                if(answerText.getText().equals("Answer Box")){
-                    answerText.setText(inputText.getText() + " * ");
+                if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
+                    answerText.setText(inputTextStr + " * ");
                     inputText.setText("");
-                }
-
-                else{
-                    answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " * ");
+                } else {
+                    answerText.setText(answerTextStr + inputTextStr + " * ");
                     inputText.setText("");
                 }
 
@@ -346,14 +317,14 @@ public class HomeCalculator extends AppCompatActivity {
         divideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String answerTextStr = answerText.getText().toString();
+                String inputTextStr = inputText.getText().toString();
 
-                if(answerText.getText().equals("Answer Box")){
-                    answerText.setText(inputText.getText() + " / ");
+                if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
+                    answerText.setText(inputTextStr + " / ");
                     inputText.setText("");
-                }
-
-                else{
-                    answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " / ");
+                } else {
+                    answerText.setText(answerTextStr + inputTextStr + " / ");
                     inputText.setText("");
                 }
 
@@ -363,12 +334,11 @@ public class HomeCalculator extends AppCompatActivity {
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String inputTextStr = inputText.getText().toString();
 
-                if(!inputText.getText().equals("")){
+                if (!inputTextStr.equals("")) {
                     inputText.setText("");
-                }
-
-                else{
+                } else {
                     answerText.setText("");
                 }
 
@@ -379,120 +349,127 @@ public class HomeCalculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                if(inputBases.getSelectedItem().toString().equals("Bin")){
+                String answerTextStr = answerText.getText().toString();
+                String inputTextStr = inputText.getText().toString();
+                String inputBase = inputBases.getSelectedItem().toString();
+                String outputBase = outputBases.getSelectedItem().toString();
 
-                    if(outputBases.getSelectedItem().toString().equals("Bin")){
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + inputText.getText().toString());
+                if (inputBase.equals("Bin")) {
+
+                    if (outputBase.equals("Bin")) {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + inputTextStr);
                             inputText.setText("");
                         }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
 
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + inputText.getText().toString());
+                        }
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
                             inputText.setText("");
                         }
-                    }
-
-                    else if(outputBases.getSelectedItem().toString().equals("Dec")){
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + BaseConverter.binaryToDecimal(inputText.getText().toString()));
+                    } else if (outputBase.equals("Dec")) {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr));
                             inputText.setText("");
                         }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
 
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.binaryToDecimal(inputText.getText().toString()));
+                        }
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr));
                             inputText.setText("");
                         }
-                    }
-
-                    else{
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + BaseConverter.binaryToHex(inputText.getText().toString()));
+                    } else {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr));
                             inputText.setText("");
                         }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
 
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.binaryToHex(inputText.getText().toString()));
-                            inputText.setText("");
                         }
-                    }
-
-                }
-
-                else if(inputBases.getSelectedItem().toString().equals("Dec")){
-
-                    if(outputBases.getSelectedItem().toString().equals("Bin")){
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + BaseConverter.decimalToBinary(inputText.getText().toString()));
-                            inputText.setText("");
-                        }
-
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.decimalToBinary(inputText.getText().toString()));
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr));
                             inputText.setText("");
                         }
                     }
 
-                    else if(outputBases.getSelectedItem().toString().equals("Dec")){
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + inputText.getText().toString());
+                } else if (inputBase.equals("Dec")) {
+
+                    if (outputBase.equals("Bin")) {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr));
                             inputText.setText("");
                         }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
 
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + inputText.getText().toString());
+                        }
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr));
                             inputText.setText("");
                         }
-                    }
-
-                    else{
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + BaseConverter.decimalToHex(inputText.getText().toString()));
+                    } else if (outputBase.equals("Dec")) {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + inputTextStr);
                             inputText.setText("");
                         }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
 
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.decimalToHex(inputText.getText().toString()));
+                        }
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
                             inputText.setText("");
                         }
-                    }
-
-                }
-
-                else{
-
-                    if(outputBases.getSelectedItem().toString().equals("Bin")){
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + BaseConverter.hexToBinary(inputText.getText().toString()));
+                    } else {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr));
                             inputText.setText("");
                         }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
 
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.hexToBinary(inputText.getText().toString()));
-                            inputText.setText("");
                         }
-                    }
-
-                    else if(outputBases.getSelectedItem().toString().equals("Dec")){
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + BaseConverter.hexToDecimal(inputText.getText().toString()));
-                            inputText.setText("");
-                        }
-
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + BaseConverter.hexToDecimal(inputText.getText().toString()));
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr));
                             inputText.setText("");
                         }
                     }
 
-                    else{
-                        if(answerText.getText().toString().equals("Answer Box")){
-                            answerText.setText(inputText.getText().toString() + " = " + inputText.getText().toString());
+                } else {
+
+                    if (outputBase.equals("Bin")) {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr));
                             inputText.setText("");
                         }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
 
-                        else{
-                            answerText.setText(answerText.getText().toString() + inputText.getText().toString() + " = " + inputText.getText().toString());
+                        }
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr));
+                            inputText.setText("");
+                        }
+                    } else if (outputBase.equals("Dec")) {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr));
+                            inputText.setText("");
+                        }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
+
+                        }
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr));
+                            inputText.setText("");
+                        }
+                    } else {
+                        if (answerTextStr.equals("Answer Box")) {
+                            answerText.setText(inputTextStr + " = " + inputTextStr);
+                            inputText.setText("");
+                        }
+                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
+
+                        }
+                        else {
+                            answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
                             inputText.setText("");
                         }
                     }
@@ -502,5 +479,6 @@ public class HomeCalculator extends AppCompatActivity {
             }
         });
 
+        return root;
     }
 }
