@@ -26,6 +26,7 @@ public class MatrixCalculator extends Fragment{
     private int rowTrackerTwo = 0;
     private int colTrackerTwo = 0;
     private boolean isFullTwo = false;
+    private boolean ansFull = false;
 
     private int value;
 
@@ -196,6 +197,7 @@ public class MatrixCalculator extends Fragment{
                 rowTrackerTwo = 0;
                 colTrackerTwo = 0;
                 isFullTwo = false;
+                ansFull = false;
 
                 matrixOne = new int[0][0];
                 matrixTwo = new int[0][0];
@@ -212,6 +214,20 @@ public class MatrixCalculator extends Fragment{
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (ansFull == true) {
+                    matrixOne = ansMatrix;
+                    rowSizeOne = ansMatrix.length;
+                    colSizeOne = ansMatrix[0].length;
+                    isFullOne = true;
+                    rowSizeTwo = 0;
+                    colSizeTwo = 0;
+                    matrixTwo = new int[0][0];
+                    matrixValuesTwo = "";
+                    rowTrackerTwo = 0;
+                    colTrackerTwo = 0;
+                    isFullTwo = false;
+                    ansFull = false;
+                }
                 if (isFullOne == false) {
                     if (rowSizeOne == 0) {
                         rowSizeOne = Integer.parseInt(inputText.getText().toString());
@@ -358,6 +374,9 @@ public class MatrixCalculator extends Fragment{
                         }
                     }
                     matrixCreated.setText("ANSWER MATRIX:");
+                    matrixMessage.setText("INPUT ROW SIZE OF MATRIX TO BE ADDED TO ANSWER MATRIX:");
+                    ansFull = true;
+
 
                 }
             }
@@ -393,6 +412,8 @@ public class MatrixCalculator extends Fragment{
                         }
                     }
                     matrixCreated.setText("ANSWER MATRIX:");
+                    matrixMessage.setText("INPUT ROW SIZE OF MATRIX TO BE ADDED TO ANSWER MATRIX:");
+                    ansFull = true;
 
                 }
             }
