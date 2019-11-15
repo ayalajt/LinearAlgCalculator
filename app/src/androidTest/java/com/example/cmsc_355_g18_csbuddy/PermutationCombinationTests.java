@@ -21,6 +21,7 @@ public class PermutationCombinationTests {
     @Rule
     public final ActivityTestRule<MainActivity> main= new ActivityTestRule<>(MainActivity.class);
 
+    //Represents Scenario 1 in the Compute Permutations User Story
     @Test
     public void permWithRepTest() {
         onView(withId(R.id.permRadioButton)).perform(click());
@@ -31,6 +32,7 @@ public class PermutationCombinationTests {
         onView(withId(R.id.outputTextView)).check(matches(withText("1000")));
     }
 
+    //Represents Scenario 2 in the Compute Permutations User Story
     @Test
     public void combWithRepTest() {
         onView(withId(R.id.combRadioButton)).perform(click());
@@ -41,6 +43,7 @@ public class PermutationCombinationTests {
         onView(withId(R.id.outputTextView)).check(matches(withText("28")));
     }
 
+    //Represents Scenario 3 in the Compute Permutations User Story
     @Test
     public void permNoRepTest() {
         onView(withId(R.id.permRadioButton)).perform(click());
