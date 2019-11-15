@@ -12,4 +12,6 @@ During this iteration G-18 worked on more aspects of out computer science app.  
 User Story, Jesus Ayala worked on the Matrix Addition and Subtraction User Story, Quinci Cuthbert worked on the Truth Tables User Story,
 Sean Stitzer worked on the Java Data Type Calculator user story, and Cole Delinski worked on the Decimal Calculation User Story and tab
 functionality in the app. While we planned on finishing the Java Data Type Calculator for this iteration which would use a Template design 
-pattern we were unable to get the activity to function properly by the due date. 
+pattern we were unable to get the activity to function properly by the due date. We were however able to finish the Matrix Adition, Decimal
+Calculations, and Permutations and Combinations User Stories so we were still able to get three done. Cole also tried to make the Decimal
+Calculations user story function with a Strategy Design patter however he was unable to figure out how to properly implement that as well.
