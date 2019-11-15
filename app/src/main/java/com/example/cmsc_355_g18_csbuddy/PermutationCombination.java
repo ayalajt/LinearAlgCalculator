@@ -34,11 +34,9 @@ import android.view.LayoutInflater;
 public class PermutationCombination extends Fragment {
 
 
-    public View onCreateView(
-            @NonNull LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.activity_compute_permutations, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        View root = inflater.inflate(R.layout.activity_compute_permutations, container, false);
 
         final RadioGroup radioGroup = (RadioGroup) root.findViewById(R.id.radioGroup);
         RadioButton combRadioButton = (RadioButton) root.findViewById(R.id.combRadioButton);
@@ -49,7 +47,7 @@ public class PermutationCombination extends Fragment {
         Button submitButton = (Button) root.findViewById(R.id.submitButton);
         final TextView textView1 = (TextView) root.findViewById(R.id.textViewRepetition); // repetition
         final TextView textView2 = (TextView) root.findViewById(R.id.chooseTextView); // choose
-
+        final TextView textView3 = (TextView) root.findViewById(R.id.outputTextView); // where answer will display
         radioGroup.clearCheck(); // make buttons initially clear
 
 
@@ -59,7 +57,7 @@ public class PermutationCombination extends Fragment {
                 int n = Integer.parseInt(editText_n.getText().toString());
                 int r = Integer.parseInt(editText_r.getText().toString());
                 Boolean toggleState = repetitionToggleButton.isChecked(); // true if repetition is on
-                int output;
+                int output = -1;
 
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 if (selectedId == -1) {
@@ -76,8 +74,6 @@ public class PermutationCombination extends Fragment {
                         else {
                             output = factorial(n) / (factorial(n - r) * factorial(r));
                         }
-
-
                     }
                     // permutation
                     else if (selectedId == R.id.permRadioButton) {
@@ -90,9 +86,10 @@ public class PermutationCombination extends Fragment {
                             output = factorial(n) / factorial(n - r);
                         }
                     }
+
                 }
 
-
+                textView3.setText(String.valueOf(output));
             }
         });
 
