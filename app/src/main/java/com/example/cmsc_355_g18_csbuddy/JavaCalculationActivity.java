@@ -29,6 +29,9 @@ public class JavaCalculationActivity extends Fragment{
     private JavaArithmetic.DataTypes t1;
     private JavaArithmetic.DataTypes t2;
 
+    //if inputting into number 1, true; else false
+    private boolean left = true;
+
     private String number1 = "";
     private String number2 = "";
     private String operator = "+";
@@ -105,7 +108,10 @@ public class JavaCalculationActivity extends Fragment{
         buttonZero.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String s = "0";
+                if(left)
+                    number1 += "0";
+                else
+                    number2 += "0";
             }
         });
 
@@ -235,7 +241,7 @@ public class JavaCalculationActivity extends Fragment{
             }
         });
 
-
+        //insert text view handlers here
 
         return root;
     }
