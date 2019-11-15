@@ -33,7 +33,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.sevenButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("17")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("17 = 17")));
     }
 
@@ -49,7 +49,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.threeButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("26333")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("26333 = 110011011011101")));
     }
 
@@ -67,7 +67,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.fourButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("1928374")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("1928374 = 1D6CB6")));
     }
 
@@ -84,7 +84,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("110010")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("110010 = 50")));
     }
 
@@ -101,7 +101,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.oneButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("1001")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("1001 = 1001")));
     }
 
@@ -121,7 +121,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("1011110")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("1011110 = 5E")));
     }
 
@@ -138,7 +138,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.threeButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("ABC123")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("ABC123 = 11256099")));
     }
 
@@ -154,7 +154,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.cButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("E4C")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("E4C = 111001001100")));
     }
 
@@ -172,7 +172,7 @@ public class HomeCalculatorTests {
         onView(withId(R.id.dButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("36F0D")));
         onView(withId(R.id.equalsButton)).perform(click());
-        onView(withId(R.id.inputText)).check(matches(withText("")));
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("36F0D = 36F0D")));
     }
 
