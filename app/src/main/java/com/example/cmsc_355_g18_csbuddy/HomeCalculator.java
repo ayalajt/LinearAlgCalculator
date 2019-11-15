@@ -336,8 +336,8 @@ public class HomeCalculator extends Fragment {
             public void onClick(View view) {
                 String inputTextStr = inputText.getText().toString();
 
-                if (!inputTextStr.equals("")) {
-                    inputText.setText("");
+                if (!inputTextStr.equals("0")) {
+                    inputText.setText("0");
                 } else {
                     answerText.setText("");
                 }
@@ -365,41 +365,41 @@ public class HomeCalculator extends Fragment {
                     if (outputBase.equals("Bin")) {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + inputTextStr);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     } else if (outputBase.equals("Dec")) {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     } else {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     }
 
@@ -408,41 +408,41 @@ public class HomeCalculator extends Fragment {
                     if (outputBase.equals("Bin")) {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     } else if (outputBase.equals("Dec")) {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + inputTextStr);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     } else {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     }
 
@@ -451,41 +451,41 @@ public class HomeCalculator extends Fragment {
                     if (outputBase.equals("Bin")) {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     } else if (outputBase.equals("Dec")) {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr));
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     } else {
                         if (answerTextStr.equals("Answer Box")) {
                             answerText.setText(inputTextStr + " = " + inputTextStr);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
                             answerText.setText(answerTextStr + inputTextStr + " = " + answer);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
-                            inputText.setText("");
+                            inputText.setText("0");
                         }
                     }
 
