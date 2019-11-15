@@ -3,6 +3,7 @@ package com.example.cmsc_355_g18_csbuddy;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,29 @@ import java.util.ArrayList;
 
 public class JavaCalculationActivity extends Fragment {
 
-    Spinner primitiveTypesSpinner1;
-    Spinner primitiveTypesSpinner2;
+    private Spinner primitiveTypesSpinner1;
+    private Spinner primitiveTypesSpinner2;
 
-    JavaArithmetic.DataTypes t1;
-    JavaArithmetic.DataTypes t2;
+    private JavaArithmetic.DataTypes t1;
+    private JavaArithmetic.DataTypes t2;
+
+    private Button buttonZero;
+    private Button buttonOne;
+    private Button buttonTwo;
+    private Button buttonThree;
+    private Button buttonFour;
+    private Button buttonFive;
+    private Button buttonSix;
+    private Button buttonSeven;
+    private Button buttonEight;
+    private Button buttonNine;
+    private Button buttonPlus;
+    private Button buttonMinus;
+    private Button buttonMultiply;
+    private Button buttonDivide;
+    private Button buttonNegative;
+    private Button buttonDecimal;
+    private Button buttonCalculate;
 
     @Override
     public View onCreateView(
@@ -68,8 +87,28 @@ public class JavaCalculationActivity extends Fragment {
             }
         });
 
-
+        bobTheButtonBuilder(root);
 
         return root;
+    }
+
+    private void bobTheButtonBuilder(View v){
+        buttonZero = v.findViewById(R.id.button0);
+        buttonOne = v.findViewById(R.id.button1);
+        buttonTwo = v.findViewById(R.id.button2);
+        buttonThree = v.findViewById(R.id.button3);
+        buttonFour = v.findViewById(R.id.button4);
+        buttonFive = v.findViewById(R.id.button5);
+        buttonSix = v.findViewById(R.id.button6);
+        buttonSeven = v.findViewById(R.id.button7);
+        buttonEight = v.findViewById(R.id.button8);
+        buttonNine = v.findViewById(R.id.button9);
+        buttonPlus = v.findViewById(R.id.buttonPlus);
+        buttonMinus = v.findViewById(R.id.buttonMinus);
+        buttonMultiply = v.findViewById(R.id.buttonMultiply);
+        buttonDivide = v.findViewById(R.id.buttonDivide);
+        buttonNegative = v.findViewById(R.id.buttonNegative);
+        buttonDecimal = v.findViewById(R.id.buttonDecimal);
+        buttonCalculate = v.findViewById(R.id.buttonCalculate);
     }
 }

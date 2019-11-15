@@ -1,7 +1,5 @@
 package com.example.cmsc_355_g18_csbuddy;
 
-import android.widget.Button;
-
 import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onView;
@@ -13,19 +11,14 @@ import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static androidx.test.espresso.Espresso.onData;
-import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
 import static org.hamcrest.Matchers.hasToString;
-import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 
 @RunWith(AndroidJUnit4.class)
@@ -39,7 +32,7 @@ public class HomeCalculatorCalculationsTests {
         onView(withId(R.id.threeButton)).perform(click());
         onView(withId(R.id.sixButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
-        onView(withId(R.id.zeroButton)).perform(click());
+        onView(withId(R.id.button0)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("3610")));
         onView(withId(R.id.plusButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("0")));
@@ -99,7 +92,7 @@ public class HomeCalculatorCalculationsTests {
         onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("752 / ")));
         onView(withId(R.id.eightButton)).perform(click());
-        onView(withId(R.id.zeroButton)).perform(click());
+        onView(withId(R.id.button0)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("80")));
         onView(withId(R.id.equalsButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("0")));

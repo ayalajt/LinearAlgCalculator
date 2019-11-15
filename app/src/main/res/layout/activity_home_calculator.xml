@@ -75,7 +75,7 @@
         app:layout_constraintTop_toBottomOf="@+id/sixButton" />
 
     <Button
-        android:id="@+id/zeroButton"
+        android:id="@+id/button0"
         android:layout_width="75dp"
         android:layout_height="60dp"
         android:text="@string/zeroButton"
@@ -91,7 +91,7 @@
         android:layout_height="60dp"
         android:text="@string/twoButton"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/zeroButton"
+        app:layout_constraintBottom_toTopOf="@+id/button0"
         app:layout_constraintEnd_toStartOf="@+id/threeButton"
         app:layout_constraintStart_toEndOf="@+id/oneButton"
         app:layout_constraintTop_toBottomOf="@+id/fiveButton" />

@@ -1,5 +1,4 @@
 package com.example.cmsc_355_g18_csbuddy;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +9,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 
@@ -43,7 +39,7 @@ public class HomeCalculator extends Fragment {
         Button sevenButton = (Button) root.findViewById(R.id.sevenButton);
         Button eightButton = (Button) root.findViewById(R.id.eightButton);
         Button nineButton = (Button) root.findViewById(R.id.nineButton);
-        Button zeroButton = (Button) root.findViewById(R.id.zeroButton);
+        Button zeroButton = (Button) root.findViewById(R.id.button0);
         Button aButton = (Button) root.findViewById(R.id.aButton);
         Button bButton = (Button) root.findViewById(R.id.bButton);
         Button cButton = (Button) root.findViewById(R.id.cButton);
