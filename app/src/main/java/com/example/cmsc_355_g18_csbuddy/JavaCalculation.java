@@ -2,6 +2,8 @@ package com.example.cmsc_355_g18_csbuddy;
 
 import android.graphics.Path;
 
+import androidx.annotation.NonNull;
+
 /*****************************************************************
  File       :JavaCalculation
  Description:Generates an object consisting of two flags and two numbers with methods to perform
@@ -65,7 +67,7 @@ public class JavaCalculation implements JavaArithmetic {
         result = operand1.longValue() / operand2.longValue();
     }
 
-    public Number getResult() {
-        return approxNumByType(resultType, result);
+    public String getResult() {
+        return "" + approxNumByType(resultType, result);
     }
 }

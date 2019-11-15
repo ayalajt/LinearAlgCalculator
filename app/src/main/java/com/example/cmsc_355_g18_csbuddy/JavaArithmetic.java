@@ -12,5 +12,5 @@ public interface JavaArithmetic {
     public void subtract();
     public void multiply();
     public void divide();
-    public Number getResult();
+    public String getResult();
 }
