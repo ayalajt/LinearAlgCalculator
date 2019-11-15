@@ -1,5 +1,6 @@
 package com.example.cmsc_355_g18_csbuddy;
 
+import androidx.test.espresso.Espresso;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.runner.AndroidJUnit4;
 
@@ -24,10 +25,13 @@ public class PermutationCombinationTests {
     //Represents Scenario 1 in the Compute Permutations User Story
     @Test
     public void permWithRepTest() {
+        onView(withId(R.id.view_pager)).perform(swipeLeft());
+        onView(withId(R.id.view_pager)).perform(swipeLeft());
         onView(withId(R.id.permRadioButton)).perform(click());
         onView(withId(R.id.repetitionButton)).perform(click());
         onView(withId(R.id.editText3)).perform(typeText("10"));
         onView(withId(R.id.editText4)).perform(typeText("3"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.submitButton)).perform(click());
         onView(withId(R.id.outputTextView)).check(matches(withText("1000")));
     }
@@ -35,10 +39,13 @@ public class PermutationCombinationTests {
     //Represents Scenario 2 in the Compute Permutations User Story
     @Test
     public void combWithRepTest() {
+        onView(withId(R.id.view_pager)).perform(swipeLeft());
+        onView(withId(R.id.view_pager)).perform(swipeLeft());
         onView(withId(R.id.combRadioButton)).perform(click());
         onView(withId(R.id.repetitionButton)).perform(click());
         onView(withId(R.id.editText3)).perform(typeText("7"));
         onView(withId(R.id.editText4)).perform(typeText("2"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.submitButton)).perform(click());
         onView(withId(R.id.outputTextView)).check(matches(withText("28")));
     }
@@ -46,9 +53,12 @@ public class PermutationCombinationTests {
     //Represents Scenario 3 in the Compute Permutations User Story
     @Test
     public void permNoRepTest() {
+        onView(withId(R.id.view_pager)).perform(swipeLeft());
+        onView(withId(R.id.view_pager)).perform(swipeLeft());
         onView(withId(R.id.permRadioButton)).perform(click());
         onView(withId(R.id.editText3)).perform(typeText("10"));
         onView(withId(R.id.editText4)).perform(typeText("3"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.submitButton)).perform(click());
         onView(withId(R.id.outputTextView)).check(matches(withText("720")));
     }
