@@ -353,6 +353,12 @@ public class HomeCalculator extends Fragment {
                 String inputTextStr = inputText.getText().toString();
                 String inputBase = inputBases.getSelectedItem().toString();
                 String outputBase = outputBases.getSelectedItem().toString();
+                String answer = BaseCalculator.calculate(answerTextStr + inputTextStr, inputBase, outputBase);
+
+                if(answerTextStr.contains("=")){
+                    answerText.setText("");
+                    answerTextStr = "";
+                }
 
                 if (inputBase.equals("Bin")) {
 
@@ -362,7 +368,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
@@ -374,7 +381,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr));
@@ -386,7 +394,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr));
@@ -402,7 +411,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr));
@@ -414,7 +424,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
@@ -426,7 +437,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr));
@@ -442,7 +454,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr));
@@ -454,7 +467,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr));
@@ -466,7 +480,8 @@ public class HomeCalculator extends Fragment {
                             inputText.setText("");
                         }
                         else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-
+                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                            inputText.setText("");
                         }
                         else {
                             answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
