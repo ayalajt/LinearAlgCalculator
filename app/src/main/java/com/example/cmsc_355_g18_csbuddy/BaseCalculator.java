@@ -21,6 +21,10 @@ public class BaseCalculator {
                     return BaseConverter.decimalToBinary(answer);
                 }
                 else if(outputBase.equals("Dec")){
+                    if(answer.contains(".0")) {
+                        int intAnswer = (int) Double.parseDouble(answer);
+                        answer = Integer.toString(intAnswer);
+                    }
                     return answer;
                 }
                 else{

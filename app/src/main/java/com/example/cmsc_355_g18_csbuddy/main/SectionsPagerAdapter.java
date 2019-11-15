@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.cmsc_355_g18_csbuddy.HomeCalculator;
 import com.example.cmsc_355_g18_csbuddy.JavaCalculation;
+import com.example.cmsc_355_g18_csbuddy.JavaCalculationActivity;
 import com.example.cmsc_355_g18_csbuddy.MatrixCalculator;
 import com.example.cmsc_355_g18_csbuddy.PermutationCombination;
 import com.example.cmsc_355_g18_csbuddy.R;
@@ -45,6 +46,9 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 3:
                 TruthTables truthTables = new TruthTables();
                 return truthTables;
+            case 4:
+                JavaCalculationActivity javaCalculationActivity = new JavaCalculationActivity();
+                return javaCalculationActivity;
             default:
                 return null;
         }
@@ -58,6 +62,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 5;
     }
 }

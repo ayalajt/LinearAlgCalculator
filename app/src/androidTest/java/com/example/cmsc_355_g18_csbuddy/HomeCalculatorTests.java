@@ -176,4 +176,25 @@ public class HomeCalculatorTests {
         onView(withId(R.id.answerText)).check(matches(withText("36F0D = 36F0D")));
     }
 
+
+    //Test for scenario Decimal Addition in the Decimal Calculations User Story
+    @Test
+    public void decimalAdditionTest(){
+        onView(withId(R.id.threeButton)).perform(click());
+        onView(withId(R.id.sixButton)).perform(click());
+        onView(withId(R.id.oneButton)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
+        onView(withId(R.id.inputText)).check(matches(withText("3610")));
+        onView(withId(R.id.plusButton)).perform(click());
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
+        onView(withId(R.id.answerText)).check(matches(withText("3610 +")));
+        onView(withId(R.id.nineButton)).perform(click());
+        onView(withId(R.id.eightButton)).perform(click());
+        onView(withId(R.id.twoButton)).perform(click());
+        onView(withId(R.id.inputText)).check(matches(withText("982")));
+        onView(withId(R.id.equalsButton)).perform(click());
+        onView(withId(R.id.inputText)).check(matches(withText("0")));
+        onView(withId(R.id.answerText)).check(matches(withText("3610 + 982 = 4592")));
+    }
+
 }
