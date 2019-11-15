@@ -33,20 +33,21 @@ public class JavaCalculationActivity extends Fragment {
         View root = inflater.inflate(R.layout.activity_java_calculation, container, false);
 
         List<JavaArithmetic.DataTypes> primitveDataTypes = Arrays.asList(JavaArithmetic.DataTypes.values());
-        ArrayList<String> primitiveDataTypeStrings = new ArrayList<String>();
-        for (JavaArithmetic.DataTypes t: primitveDataTypes) {
-            primitiveDataTypeStrings.add(t.toString());
-        }
 
         primitiveTypesSpinner1 = root.findViewById(R.id.spinner1);
         ArrayAdapter<JavaArithmetic.DataTypes> adapter1 = new ArrayAdapter<JavaArithmetic.DataTypes>(this.getActivity(),
                 android.R.layout.simple_spinner_item, primitveDataTypes);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primitiveTypesSpinner1.setAdapter(adapter1);
-        primitiveTypesSpinner1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        primitiveTypesSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 t1 = (JavaArithmetic.DataTypes)adapterView.getItemAtPosition(i);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                t1 = JavaArithmetic.DataTypes.LONG;
             }
         });
 
@@ -55,12 +56,19 @@ public class JavaCalculationActivity extends Fragment {
                 android.R.layout.simple_spinner_item, primitveDataTypes);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primitiveTypesSpinner2.setAdapter(adapter2);
-        primitiveTypesSpinner2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        primitiveTypesSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 t2 = (JavaArithmetic.DataTypes)adapterView.getItemAtPosition(i);
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                t2 = JavaArithmetic.DataTypes.LONG;
+            }
         });
+
+
 
         return root;
     }
