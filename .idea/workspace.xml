@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="652ae3d4-1f3b-461c-881e-66e1b9013f23" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/BaseCalculator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
@@ -19,6 +20,9 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/DecimalCalculator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/HexCalculator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/HomeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/HomeCalculator.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/PermutationCombination.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/PermutationCombination.java" afterDir="false" />
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
     </list>
     <list id="5f12f211-285a-47ca-8a0c-6cc33ef75346" name="Revert &quot;Added code for functional tt generator with hardcoded logic statements&quot;" comment="Revert &quot;Added code for functional tt generator with hardcoded logic statements&quot;&#10;&#10;This reverts commit cfd42845" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -32,7 +36,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_28" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Android_Accelerated_Oreo" />
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -52,6 +56,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/MatrixCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -113,6 +118,13 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
               <caret line="82" column="15" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="15" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/PermutationCombination.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,6 +133,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/MatrixOperations.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -137,10 +150,18 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_compute_permutations.xml">
+          <provider selected="true" editor-type-id="android-designer2" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="1035">
+              <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/TruthTables.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -155,6 +176,8 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -198,7 +221,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/main/PlaceholderFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/PermutationCombination.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home_calculator.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/MainActivity.java" />
@@ -209,11 +231,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/main/SectionsPagerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/TruthTables.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_truth_tables.xml" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/DecimalCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/HexCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/BinaryCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/HomeCalculator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/BaseCalculator.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/PermutationCombination.java" />
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
       </list>
     </option>
   </component>
@@ -231,6 +257,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -274,6 +301,8 @@
           <select />
         </subPane>
       </pane>
+=======
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -321,6 +350,20 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+<<<<<<< HEAD
+=======
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CMSC_355_G18_CSBuddy" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="e9137016:NonAndroidModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -579,11 +622,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.21538462" />
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.32956383" />
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -736,12 +783,12 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/main/PlaceholderFragment.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/main/PageViewModel.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
         </state>
       </provider>
+      <provider editor-type-id="android-manifest" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home_calculator.xml">
       <provider selected="true" editor-type-id="android-designer2" />
@@ -817,6 +864,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/JavaCalculation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-51">
@@ -825,6 +873,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/PermutationCombination.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/TruthTables.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/BinaryCalculator.java">
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="82" column="15" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="15" />
@@ -886,8 +938,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="168">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+=======
+        <state relative-caret-position="341">
+          <caret line="108" column="1" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -896,8 +953,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/cmsc_355_g18_csbuddy/MatrixCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-527">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+=======
+        <state relative-caret-position="136">
+          <caret line="116" column="45" lean-forward="true" selection-start-line="116" selection-start-column="45" selection-end-line="116" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_compute_permutations.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="69" column="30" selection-start-line="69" selection-start-column="30" selection-end-line="69" selection-end-column="30" />
+>>>>>>> a23fae5102d8717dcd1d57746008edf4881596ef
         </state>
       </provider>
     </entry>

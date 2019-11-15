@@ -273,10 +273,10 @@ public class HomeCalculator extends Fragment {
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
                     answerText.setText(inputTextStr + " + ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 } else {
                     answerText.setText(answerTextStr + inputTextStr + " + ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 }
             }
         });
@@ -289,10 +289,10 @@ public class HomeCalculator extends Fragment {
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
                     answerText.setText(inputTextStr + " - ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 } else {
                     answerText.setText(answerTextStr + inputTextStr + " - ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 }
             }
         });
@@ -305,10 +305,10 @@ public class HomeCalculator extends Fragment {
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
                     answerText.setText(inputTextStr + " * ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 } else {
                     answerText.setText(answerTextStr + inputTextStr + " * ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 }
 
             }
@@ -322,10 +322,10 @@ public class HomeCalculator extends Fragment {
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
                     answerText.setText(inputTextStr + " / ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 } else {
                     answerText.setText(answerTextStr + inputTextStr + " / ");
-                    inputText.setText("");
+                    inputText.setText("0");
                 }
 
             }

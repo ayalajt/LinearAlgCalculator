@@ -236,13 +236,13 @@ public class MatrixCalculator extends Fragment{
                             rowSizeOne = 0;
                             inputText.setText("0");
                         } else {
-                            matrixMessage.setText("INPUT COL SIZE:");
+                            matrixMessage.setText("INPUT MATRIX COLUMN SIZE:");
                             inputText.setText("0");
                         }
                     } else if (colSizeOne == 0) {
                         colSizeOne = Integer.parseInt(inputText.getText().toString());
                         if (colSizeOne > 5 || colSizeOne <= 0) {
-                            matrixMessage.setText("INPUT VALID COL SIZE:");
+                            matrixMessage.setText("INPUT VALID COLUMN SIZE:");
                             colSizeOne = 0;
                             inputText.setText("0");
 
@@ -292,13 +292,13 @@ public class MatrixCalculator extends Fragment{
                             rowSizeTwo = 0;
                             inputText.setText("0");
                         } else {
-                            matrixMessage.setText("INPUT 2ND COL SIZE:");
+                            matrixMessage.setText("INPUT 2ND COLUMN SIZE:");
                             inputText.setText("0");
                         }
                     } else if (colSizeTwo == 0) {
                         colSizeTwo = Integer.parseInt(inputText.getText().toString());
                         if (colSizeTwo > 5 || colSizeTwo <= 0) {
-                            matrixMessage.setText("INPUT VALID 2ND COL SIZE:");
+                            matrixMessage.setText("INPUT VALID 2ND COLUMN SIZE:");
                             colSizeTwo = 0;
                             inputText.setText("0");
 
@@ -355,6 +355,9 @@ public class MatrixCalculator extends Fragment{
                     matrixMessage.setText("INPUT ROW SIZE OF 2ND MATRIX");
                     inputText.setText("0");
                 }
+                else if (rowSizeOne != rowSizeTwo && colSizeOne != colSizeTwo) {
+                    matrixMessage.setText("ERROR: MATRICES ARE NOT SAME DIMENSIONS. PRESS CLEAR TO INPUT AGAIN");
+                }
                 else if (rowSizeOne == rowSizeTwo && colSizeOne == colSizeTwo) {
                     matrixView.setText("");
                     ansMatrix = new int[rowSizeOne][colSizeOne];
@@ -392,6 +395,9 @@ public class MatrixCalculator extends Fragment{
                 else if (rowSizeTwo <= 0 || colSizeTwo <= 0){
                     matrixMessage.setText("INPUT ROW SIZE OF 2ND MATRIX");
                     inputText.setText("0");
+                }
+                else if (rowSizeOne != rowSizeTwo && colSizeOne != colSizeTwo) {
+                    matrixMessage.setText("ERROR: MATRICES ARE NOT SAME DIMENSIONS. PRESS CLEAR TO INPUT AGAIN");
                 }
                 else if (rowSizeOne == rowSizeTwo && colSizeOne == colSizeTwo) {
                     matrixView.setText("");
