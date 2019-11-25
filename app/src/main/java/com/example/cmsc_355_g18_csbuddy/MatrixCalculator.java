@@ -28,13 +28,13 @@ public class MatrixCalculator extends Fragment{
     private boolean isFullTwo = false;
     private boolean ansFull = false;
 
-    private int value;
+    private double value;
     private boolean plusClicked = false;
     private boolean minusClicked = false;
 
-    private int[][] matrixOne = new int[0][0];
-    private int[][] matrixTwo = new int[0][0];
-    private int[][] ansMatrix = new int[0][0];
+    private double[][] matrixOne = new double[0][0];
+    private double[][] matrixTwo = new double[0][0];
+    private double[][] ansMatrix = new double[0][0];
     private String matrixValuesOne = "";
     private String matrixValuesTwo = "";
 
@@ -45,28 +45,28 @@ public class MatrixCalculator extends Fragment{
 
         View root = inflater.inflate(R.layout.activity_matrix_calculator, container, false);
 
-        Button zeroButton = (Button) root.findViewById(R.id.zeroButtonForMatrix);
-        Button oneButton = (Button) root.findViewById(R.id.oneButtonForMatrix);
-        Button twoButton = (Button) root.findViewById(R.id.twoButtonForMatrix);
-        Button threeButton = (Button) root.findViewById(R.id.threeButtonForMatrix);
-        Button fourButton = (Button) root.findViewById(R.id.fourButtonForMatrix);
-        Button fiveButton = (Button) root.findViewById(R.id.fiveButtonForMatrix);
-        Button sixButton = (Button) root.findViewById(R.id.sixButtonForMatrix);
-        Button sevenButton = (Button) root.findViewById(R.id.sevenButtonForMatrix);
-        Button eightButton = (Button) root.findViewById(R.id.eightButtonForMatrix);
-        Button nineButton = (Button) root.findViewById(R.id.nineButtonForMatrix);
-        Button decimalButton = (Button) root.findViewById(R.id.decimalButtonForMatrix);
-        Button negateButton = (Button) root.findViewById(R.id.negateButtonForMatrix);
-        Button enterButton = (Button) root.findViewById(R.id.enterButtonForMatrix);
-        Button plusButton = (Button) root.findViewById(R.id.plusButtonForMatrix);
-        Button minusButton = (Button) root.findViewById(R.id.minusButtonForMatrix);
-        Button clearButton = (Button) root.findViewById(R.id.clearButtonForMatrix);
-        final TextView inputText = (TextView) root.findViewById(R.id.inputValueForMatrix);
-        final TextView matrixMessage = (TextView) root.findViewById(R.id.InputMessageForMatrix);
-        final TextView matrixCreated = (TextView) root.findViewById(R.id.MatrixCreated);
-        final TextView matrixViewOne = (TextView) root.findViewById(R.id.matrixViewOne);
-        final TextView matrixViewOp = (TextView) root.findViewById(R.id.matrixViewOp);
-        final TextView matrixViewTwo = (TextView) root.findViewById(R.id.matrixViewTwo);
+        Button zeroButton = root.findViewById(R.id.zeroButtonForMatrix);
+        Button oneButton = root.findViewById(R.id.oneButtonForMatrix);
+        Button twoButton = root.findViewById(R.id.twoButtonForMatrix);
+        Button threeButton = root.findViewById(R.id.threeButtonForMatrix);
+        Button fourButton = root.findViewById(R.id.fourButtonForMatrix);
+        Button fiveButton = root.findViewById(R.id.fiveButtonForMatrix);
+        Button sixButton = root.findViewById(R.id.sixButtonForMatrix);
+        Button sevenButton = root.findViewById(R.id.sevenButtonForMatrix);
+        Button eightButton = root.findViewById(R.id.eightButtonForMatrix);
+        Button nineButton = root.findViewById(R.id.nineButtonForMatrix);
+        Button decimalButton = root.findViewById(R.id.decimalButtonForMatrix);
+        Button negateButton = root.findViewById(R.id.negateButtonForMatrix);
+        Button enterButton = root.findViewById(R.id.enterButtonForMatrix);
+        Button plusButton = root.findViewById(R.id.plusButtonForMatrix);
+        Button minusButton = root.findViewById(R.id.minusButtonForMatrix);
+        Button clearButton = root.findViewById(R.id.clearButtonForMatrix);
+        final TextView inputText = root.findViewById(R.id.inputValueForMatrix);
+        final TextView matrixMessage = root.findViewById(R.id.InputMessageForMatrix);
+        final TextView matrixCreated = root.findViewById(R.id.MatrixCreated);
+        final TextView matrixViewOne = root.findViewById(R.id.matrixViewOne);
+        final TextView matrixViewOp = root.findViewById(R.id.matrixViewOp);
+        final TextView matrixViewTwo = root.findViewById(R.id.matrixViewTwo);
 
 
         oneButton.setOnClickListener(new View.OnClickListener() {
@@ -204,9 +204,9 @@ public class MatrixCalculator extends Fragment{
                 ansFull = false;
                 plusClicked = false;
 
-                matrixOne = new int[0][0];
-                matrixTwo = new int[0][0];
-                ansMatrix = new int[0][0];
+                matrixOne = new double[0][0];
+                matrixTwo = new double[0][0];
+                ansMatrix = new double[0][0];
                 matrixValuesOne = "";
                 matrixValuesTwo = "";
                 matrixCreated.setText("MATRIX:");
@@ -218,50 +218,74 @@ public class MatrixCalculator extends Fragment{
             }
         });
 
+        decimalButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (inputText.getText().equals("0")){
+
+                }
+                else {
+                    inputText.setText(inputText.getText() + ".");
+                }
+            }
+        });
+
         enterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (ansFull == true) {
+                if (ansFull) {
                     matrixOne = ansMatrix;
                     rowSizeOne = ansMatrix.length;
                     colSizeOne = ansMatrix[0].length;
                     isFullOne = true;
                     rowSizeTwo = 0;
                     colSizeTwo = 0;
-                    matrixTwo = new int[0][0];
+                    matrixTwo = new double[0][0];
                     matrixValuesTwo = "";
                     rowTrackerTwo = 0;
                     colTrackerTwo = 0;
                     isFullTwo = false;
                     ansFull = false;
                 }
-                if (isFullOne == false) {
+                if (!(isFullOne)) {
                     if (rowSizeOne == 0) {
-                        rowSizeOne = Integer.parseInt(inputText.getText().toString());
-                        if (rowSizeOne > 4 || rowSizeOne <= 0) {
-                            matrixMessage.setText("INPUT VALID ROW SIZE:");
-                            rowSizeOne = 0;
+                        if (inputText.getText().toString().contains(".")) {
                             inputText.setText("0");
-                        } else {
-                            matrixMessage.setText("INPUT MATRIX COLUMN SIZE:");
-                            inputText.setText("0");
+                            matrixMessage.setText("INPUT VALID ROW SIZE");
+                        }
+                        else {
+                            rowSizeOne = Integer.parseInt(inputText.getText().toString());
+                            if (rowSizeOne > 4 || rowSizeOne <= 0) {
+                                matrixMessage.setText("INPUT VALID ROW SIZE:");
+                                rowSizeOne = 0;
+                                inputText.setText("0");
+                            } else {
+                                matrixMessage.setText("INPUT MATRIX COLUMN SIZE:");
+                                inputText.setText("0");
+                            }
                         }
                     } else if (colSizeOne == 0) {
-                        colSizeOne = Integer.parseInt(inputText.getText().toString());
-                        if (colSizeOne > 4 || colSizeOne <= 0) {
-                            matrixMessage.setText("INPUT VALID COLUMN SIZE:");
-                            colSizeOne = 0;
+                        if (inputText.getText().toString().contains(".")) {
                             inputText.setText("0");
+                            matrixMessage.setText("INPUT VALID COLUMN SIZE");
+                        }
+                        else {
+                            colSizeOne = Integer.parseInt(inputText.getText().toString());
+                            if (colSizeOne > 4 || colSizeOne <= 0) {
+                                matrixMessage.setText("INPUT VALID COLUMN SIZE:");
+                                colSizeOne = 0;
+                                inputText.setText("0");
 
-                        } else {
-                            matrixMessage.setText("INPUT VALUES:");
-                            inputText.setText("0");
+                            } else {
+                                matrixMessage.setText("INPUT VALUES:");
+                                inputText.setText("0");
+                            }
                         }
                     } else if (rowSizeOne > 0 && colSizeOne > 0) {
-                        matrixOne = new int[rowSizeOne][colSizeOne];
+                        matrixOne = new double[rowSizeOne][colSizeOne];
                         if (rowTrackerOne < rowSizeOne) {
                             if (colTrackerOne < colSizeOne) {
-                                value = Integer.parseInt(inputText.getText().toString());
+                                value = Double.parseDouble(inputText.getText().toString());
                                 matrixViewOne.append(String.valueOf(value) + " ");
                                 matrixValuesOne = matrixValuesOne + inputText.getText() + " ";
                                 inputText.setText("0");
@@ -278,7 +302,7 @@ public class MatrixCalculator extends Fragment{
                                                 String parts[] = matrixValuesOne.split(" ", 2);
                                                 addValue = parts[0];
                                                 matrixValuesOne = parts[1];
-                                                matrixOne[i][j] = Integer.parseInt(addValue);
+                                                matrixOne[i][j] = Double.parseDouble(addValue);
                                             }
                                         }
                                         matrixMessage.setText("INPUT OPERATION:");
@@ -290,33 +314,45 @@ public class MatrixCalculator extends Fragment{
                         }
                     }
                 }
-                else if (isFullOne = true && isFullTwo == false && plusClicked == true) {
+                else if (isFullOne && !isFullTwo && plusClicked) {
                     if (rowSizeTwo == 0) {
-                        rowSizeTwo = Integer.parseInt(inputText.getText().toString());
-                        matrixViewTwo.setText("");
-                        if (rowSizeTwo != rowSizeOne) {
-                            matrixMessage.setText("INPUT VALID 2ND MATRIX ROW SIZE:");
-                            rowSizeTwo = 0;
+                        if (inputText.getText().toString().contains(".")) {
                             inputText.setText("0");
-                        } else {
-                            matrixMessage.setText("INPUT VALID 2ND COLUMN SIZE:");
-                            inputText.setText("0");
+                            matrixMessage.setText("INPUT VALID ROW SIZE");
+                        }
+                        else {
+                            rowSizeTwo = Integer.parseInt(inputText.getText().toString());
+                            matrixViewTwo.setText("");
+                            if (rowSizeTwo != rowSizeOne) {
+                                matrixMessage.setText("INPUT VALID 2ND MATRIX ROW SIZE:");
+                                rowSizeTwo = 0;
+                                inputText.setText("0");
+                            } else {
+                                matrixMessage.setText("INPUT VALID 2ND COLUMN SIZE:");
+                                inputText.setText("0");
+                            }
                         }
                     } else if (colSizeTwo == 0) {
-                        colSizeTwo = Integer.parseInt(inputText.getText().toString());
-                        if (colSizeTwo != colSizeOne) {
-                            colSizeTwo = 0;
+                        if (inputText.getText().toString().contains(".")) {
                             inputText.setText("0");
-
-                        } else {
-                            matrixMessage.setText("INPUT 2ND MATRIX VALUES:");
-                            inputText.setText("0");
+                            matrixMessage.setText("INPUT VALID COLUMN SIZE");
                         }
-                    } else if (rowSizeTwo == rowSizeOne && colSizeTwo == colSizeTwo) {
-                        matrixTwo = new int[rowSizeTwo][colSizeTwo];
+                        else {
+                            colSizeTwo = Integer.parseInt(inputText.getText().toString());
+                            if (colSizeTwo != colSizeOne) {
+                                colSizeTwo = 0;
+                                inputText.setText("0");
+
+                            } else {
+                                matrixMessage.setText("INPUT 2ND MATRIX VALUES:");
+                                inputText.setText("0");
+                            }
+                        }
+                    } else if (rowSizeTwo == rowSizeOne && colSizeTwo == colSizeOne) {
+                        matrixTwo = new double[rowSizeTwo][colSizeTwo];
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
-                                value = Integer.parseInt(inputText.getText().toString());
+                                value = Double.parseDouble(inputText.getText().toString());
                                 matrixViewTwo.append(String.valueOf(value) + " ");
                                 matrixValuesTwo = matrixValuesTwo + inputText.getText() + " ";
                                 inputText.setText("0");
@@ -333,7 +369,7 @@ public class MatrixCalculator extends Fragment{
                                                 String parts[] = matrixValuesTwo.split(" ", 2);
                                                 addValue = parts[0];
                                                 matrixValuesTwo = parts[1];
-                                                matrixTwo[i][j] = Integer.parseInt(addValue);
+                                                matrixTwo[i][j] = Double.parseDouble(addValue);
                                             }
                                         }
                                         matrixMessage.setText("INPUT OPERATION:");
@@ -344,11 +380,11 @@ public class MatrixCalculator extends Fragment{
                             }
                         }
                     }
-                    if (isFullOne == true && isFullTwo == true) {
+                    if (isFullOne && isFullTwo) {
                         matrixViewOne.setText("");
-                        ansMatrix = new int[rowSizeOne][colSizeOne];
-                        int valOne;
-                        int valTwo;
+                        ansMatrix = new double[rowSizeOne][colSizeOne];
+                        double valOne;
+                        double valTwo;
                         int a = 0;
                         int b = 0;
                         for (a = 0; a < ansMatrix.length; a++) {
@@ -371,7 +407,7 @@ public class MatrixCalculator extends Fragment{
                     }
                 }
 
-                else if (isFullOne = true && isFullTwo == false && minusClicked == true) {
+                else if (isFullOne && !isFullTwo && minusClicked) {
                     if (rowSizeTwo == 0) {
                         rowSizeTwo = Integer.parseInt(inputText.getText().toString());
                         matrixViewTwo.setText("");
@@ -393,11 +429,11 @@ public class MatrixCalculator extends Fragment{
                             matrixMessage.setText("INPUT 2ND MATRIX VALUES:");
                             inputText.setText("0");
                         }
-                    } else if (rowSizeTwo == rowSizeOne && colSizeTwo == colSizeTwo) {
-                        matrixTwo = new int[rowSizeTwo][colSizeTwo];
+                    } else if (rowSizeTwo == rowSizeOne && colSizeTwo == colSizeOne) {
+                        matrixTwo = new double[rowSizeTwo][colSizeTwo];
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
-                                value = Integer.parseInt(inputText.getText().toString());
+                                value = Double.parseDouble(inputText.getText().toString());
                                 matrixViewTwo.append(String.valueOf(value) + " ");
                                 matrixValuesTwo = matrixValuesTwo + inputText.getText() + " ";
                                 inputText.setText("0");
@@ -414,7 +450,7 @@ public class MatrixCalculator extends Fragment{
                                                 String parts[] = matrixValuesTwo.split(" ", 2);
                                                 addValue = parts[0];
                                                 matrixValuesTwo = parts[1];
-                                                matrixTwo[i][j] = Integer.parseInt(addValue);
+                                                matrixTwo[i][j] = Double.parseDouble(addValue);
                                             }
                                         }
                                         matrixMessage.setText("INPUT OPERATION:");
@@ -425,11 +461,11 @@ public class MatrixCalculator extends Fragment{
                             }
                         }
                     }
-                    if (isFullOne == true && isFullTwo == true) {
+                    if (isFullOne && isFullTwo) {
                         matrixViewOne.setText("");
-                        ansMatrix = new int[rowSizeOne][colSizeOne];
-                        int valOne;
-                        int valTwo;
+                        ansMatrix = new double[rowSizeOne][colSizeOne];
+                        double valOne;
+                        double valTwo;
                         int a = 0;
                         int b = 0;
                         for (a = 0; a < ansMatrix.length; a++) {
@@ -457,7 +493,7 @@ public class MatrixCalculator extends Fragment{
         plusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isFullOne == true) {
+                if (isFullOne) {
                     plusClicked = true;
                     matrixViewOp.setText("+");
                 }
@@ -472,7 +508,7 @@ public class MatrixCalculator extends Fragment{
         minusButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (isFullOne == true) {
+                if (isFullOne) {
                     minusClicked = true;
                     matrixViewOp.setText("-");
                 }
