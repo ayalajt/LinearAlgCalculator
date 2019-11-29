@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 
 public class MatrixCalculator extends Fragment{
@@ -396,7 +397,9 @@ public class MatrixCalculator extends Fragment{
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
                                 value = Double.parseDouble(inputText.getText().toString());
-                                String valueString = trimZeros(value);
+                                DecimalFormat df = new DecimalFormat("####0.00");
+                                String valueString = df.format(value);
+                                valueString = trimZeros(Double.valueOf(valueString));
                                 matrixViewTwo.append(valueString + " ");
                                 matrixValuesTwo = matrixValuesTwo + inputText.getText() + " ";
                                 inputText.setText("0");
@@ -432,7 +435,7 @@ public class MatrixCalculator extends Fragment{
                         int a;
                         int b = 0;
                         int c;
-                        String valueTrimmed = "";
+                        String valueTrimmed;
                         for (a = 0; a < rowSizeOne; a++) {
                             if (b != 0) {
                                 matrixViewOne.append("\n");
@@ -442,8 +445,10 @@ public class MatrixCalculator extends Fragment{
                                     valOne = matrixOne[a][c];
                                     valTwo = matrixTwo[c][b];
                                     ansMatrix[a][b] += (valOne * valTwo);
-                                    valueTrimmed = trimZeros(ansMatrix[a][b]);
                                 }
+                                DecimalFormat df = new DecimalFormat("####0.00");
+                                String valueString = df.format(ansMatrix[a][b]);
+                                valueTrimmed = trimZeros(Double.valueOf(valueString));
                                 matrixViewOne.append(valueTrimmed + " ");
                             }
                         }
@@ -495,8 +500,9 @@ public class MatrixCalculator extends Fragment{
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
                                 value = Double.parseDouble(inputText.getText().toString());
-                                String valueString = trimZeros(value);
-                                matrixViewTwo.append(valueString + " ");
+                                DecimalFormat df = new DecimalFormat("####0.00");
+                                String valueString = df.format(value);
+                                valueString = trimZeros(Double.valueOf(valueString));                                matrixViewTwo.append(valueString + " ");
                                 matrixValuesTwo = matrixValuesTwo + inputText.getText() + " ";
                                 inputText.setText("0");
                                 if (colTrackerTwo + 1 < colSizeTwo) {
@@ -538,7 +544,9 @@ public class MatrixCalculator extends Fragment{
                                 valOne = matrixOne[a][b];
                                 valTwo = matrixTwo[a][b];
                                 ansMatrix[a][b] = valOne + valTwo;
-                                String valueTrimmed = trimZeros(ansMatrix[a][b]);
+                                DecimalFormat df = new DecimalFormat("####0.00");
+                                String valueString = df.format(ansMatrix[a][b]);
+                                String valueTrimmed = trimZeros(Double.valueOf(valueString));
                                 matrixViewOne.append(valueTrimmed + " ");
                             }
                         }
@@ -578,7 +586,9 @@ public class MatrixCalculator extends Fragment{
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
                                 value = Double.parseDouble(inputText.getText().toString());
-                                String valueString = trimZeros(value);
+                                DecimalFormat df = new DecimalFormat("####0.00");
+                                String valueString = df.format(value);
+                                valueString = trimZeros(Double.valueOf(valueString));
                                 matrixViewTwo.append(valueString + " ");
                                 matrixValuesTwo = matrixValuesTwo + inputText.getText() + " ";
                                 inputText.setText("0");
@@ -621,7 +631,9 @@ public class MatrixCalculator extends Fragment{
                                 valOne = matrixOne[a][b];
                                 valTwo = matrixTwo[a][b];
                                 ansMatrix[a][b] = valOne - valTwo;
-                                String valueTrimmed = trimZeros(ansMatrix[a][b]);
+                                DecimalFormat df = new DecimalFormat("####0.00");
+                                String valueString = df.format(ansMatrix[a][b]);
+                                String valueTrimmed = trimZeros(Double.valueOf(valueString));
                                 matrixViewOne.append(valueTrimmed + " ");
                             }
                         }
