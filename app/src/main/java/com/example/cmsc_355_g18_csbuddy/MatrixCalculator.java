@@ -357,6 +357,8 @@ public class MatrixCalculator extends Fragment{
                         matrixViewTwo.setText(detString);
                         matrixMessage.setText(getString(R.string.inputOp));
                         detClicked = false;
+                        rowSizeTwo = 0;
+                        colSizeTwo = 0;
                     }
                 }
                 else if (!isFullTwo && multiplyClicked) {
