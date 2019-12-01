@@ -307,6 +307,9 @@ public class MatrixCalculator extends Fragment{
                         }
                     } else if (rowSizeOne > 0 && colSizeOne > 0) {
                         matrixOne = new double[rowSizeOne][colSizeOne];
+                        if (matrixViewOne.getText().toString().equals("")) {
+                            matrixViewOne.append("| ");
+                        }
                         if (rowTrackerOne < rowSizeOne) {
                             if (colTrackerOne < colSizeOne) {
                                 value = Double.parseDouble(inputText.getText().toString());
@@ -317,7 +320,11 @@ public class MatrixCalculator extends Fragment{
                                 if (colTrackerOne + 1 < colSizeOne) {
                                     colTrackerOne++;
                                 } else {
+                                    matrixViewOne.append("|");
                                     matrixViewOne.append("\n");
+                                    if (rowTrackerOne != rowSizeOne-1) {
+                                        matrixViewOne.append("| ");
+                                    }
                                     rowTrackerOne++;
                                     colTrackerOne = 0;
                                     if (rowTrackerOne >= rowSizeOne) {
@@ -330,6 +337,7 @@ public class MatrixCalculator extends Fragment{
                                                 matrixOne[i][j] = Double.parseDouble(addValue);
                                             }
                                         }
+
                                         matrixMessage.setText(getString(R.string.inputOp));
                                         inputText.setText("0");
                                         isFullOne = true;
@@ -337,6 +345,7 @@ public class MatrixCalculator extends Fragment{
                                 }
                             }
                         }
+
                     }
                 }
                 else if (detClicked) {
@@ -362,6 +371,7 @@ public class MatrixCalculator extends Fragment{
                     }
                 }
                 else if (!isFullTwo && multiplyClicked) {
+                    matrixCreated.setText(getString(R.string.MatrixCreated));
                     if (rowSizeTwo == 0) {
                         if (inputText.getText().toString().contains(".")) {
                             inputText.setText("0");
@@ -386,7 +396,7 @@ public class MatrixCalculator extends Fragment{
                         }
                         else {
                             colSizeTwo = Integer.parseInt(inputText.getText().toString());
-                            if (colSizeTwo <= 0) {
+                            if (colSizeTwo <= 0 || colSizeTwo >= 5) {
                                 colSizeTwo = 0;
                                 inputText.setText("0");
                             } else {
@@ -396,6 +406,9 @@ public class MatrixCalculator extends Fragment{
                         }
                     } else {
                         matrixTwo = new double[rowSizeTwo][colSizeTwo];
+                        if (matrixViewTwo.getText().toString().equals("")) {
+                            matrixViewTwo.append("| ");
+                        }
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
                                 value = Double.parseDouble(inputText.getText().toString());
@@ -408,7 +421,11 @@ public class MatrixCalculator extends Fragment{
                                 if (colTrackerTwo + 1 < colSizeTwo) {
                                     colTrackerTwo++;
                                 } else {
+                                    matrixViewTwo.append("|");
                                     matrixViewTwo.append("\n");
+                                    if (rowTrackerTwo != rowSizeTwo-1) {
+                                        matrixViewTwo.append("| ");
+                                    }
                                     rowTrackerTwo++;
                                     colTrackerTwo = 0;
                                     if (rowTrackerTwo >= rowSizeTwo) {
@@ -431,6 +448,7 @@ public class MatrixCalculator extends Fragment{
                     }
                     if (isFullOne && isFullTwo) {
                         matrixViewOne.setText("");
+                        matrixViewOne.append("| ");
                         ansMatrix = new double[rowSizeOne][colSizeTwo];
                         double valOne;
                         double valTwo;
@@ -441,6 +459,7 @@ public class MatrixCalculator extends Fragment{
                         for (a = 0; a < rowSizeOne; a++) {
                             if (b != 0) {
                                 matrixViewOne.append("\n");
+                                matrixViewOne.append("| ");
                             }
                             for (b = 0; b < colSizeTwo; b++) {
                                 for (c = 0; c < colSizeOne; c++) {
@@ -453,6 +472,7 @@ public class MatrixCalculator extends Fragment{
                                 valueTrimmed = trimZeros(Double.valueOf(valueString));
                                 matrixViewOne.append(valueTrimmed + " ");
                             }
+                            matrixViewOne.append("|");
                         }
 
                         matrixCreated.setText(getString(R.string.answerMatrix));
@@ -464,6 +484,7 @@ public class MatrixCalculator extends Fragment{
                     }
                 }
                 else if (!isFullTwo && plusClicked) {
+                    matrixCreated.setText(getString(R.string.MatrixCreated));
                     if (rowSizeTwo == 0) {
                         if (inputText.getText().toString().contains(".")) {
                             inputText.setText("0");
@@ -483,7 +504,7 @@ public class MatrixCalculator extends Fragment{
                         }
                     } else if (colSizeTwo == 0) {
                         if (inputText.getText().toString().contains(".")) {
-                            inputText.setText("0");
+                                    inputText.setText("0");
                             matrixMessage.setText(getString(R.string.inputValidCol));
                         }
                         else {
@@ -499,6 +520,9 @@ public class MatrixCalculator extends Fragment{
                         }
                     } else if (rowSizeTwo == rowSizeOne && colSizeTwo == colSizeOne) {
                         matrixTwo = new double[rowSizeTwo][colSizeTwo];
+                        if (matrixViewTwo.getText().toString().equals("")) {
+                            matrixViewTwo.append("| ");
+                        }
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
                                 value = Double.parseDouble(inputText.getText().toString());
@@ -510,7 +534,11 @@ public class MatrixCalculator extends Fragment{
                                 if (colTrackerTwo + 1 < colSizeTwo) {
                                     colTrackerTwo++;
                                 } else {
+                                    matrixViewTwo.append("|");
                                     matrixViewTwo.append("\n");
+                                    if (rowTrackerTwo != rowSizeTwo-1) {
+                                        matrixViewTwo.append("| ");
+                                    }
                                     rowTrackerTwo++;
                                     colTrackerTwo = 0;
                                     if (rowTrackerTwo >= rowSizeTwo) {
@@ -533,6 +561,7 @@ public class MatrixCalculator extends Fragment{
                     }
                     if (isFullOne && isFullTwo) {
                         matrixViewOne.setText("");
+                        matrixViewOne.append("| ");
                         ansMatrix = new double[rowSizeOne][colSizeOne];
                         double valOne;
                         double valTwo;
@@ -541,6 +570,7 @@ public class MatrixCalculator extends Fragment{
                         for (a = 0; a < ansMatrix.length; a++) {
                             if (b != 0) {
                                 matrixViewOne.append("\n");
+                                matrixViewOne.append("| ");
                             }
                             for (b = 0; b < ansMatrix[a].length; b++) {
                                 valOne = matrixOne[a][b];
@@ -551,6 +581,7 @@ public class MatrixCalculator extends Fragment{
                                 String valueTrimmed = trimZeros(Double.valueOf(valueString));
                                 matrixViewOne.append(valueTrimmed + " ");
                             }
+                            matrixViewOne.append("|");
                         }
                         matrixCreated.setText(getString(R.string.answerMatrix));
                         plusClicked = false;
@@ -562,6 +593,7 @@ public class MatrixCalculator extends Fragment{
                 }
 
                 else if (!isFullTwo && minusClicked) {
+                    matrixCreated.setText(getString(R.string.MatrixCreated));
                     if (rowSizeTwo == 0) {
                         rowSizeTwo = Integer.parseInt(inputText.getText().toString());
                         matrixViewTwo.setText("");
@@ -585,6 +617,9 @@ public class MatrixCalculator extends Fragment{
                         }
                     } else if (rowSizeTwo == rowSizeOne && colSizeTwo == colSizeOne) {
                         matrixTwo = new double[rowSizeTwo][colSizeTwo];
+                        if (matrixViewTwo.getText().toString().equals("")) {
+                            matrixViewTwo.append("| ");
+                        }
                         if (rowTrackerTwo < rowSizeTwo) {
                             if (colTrackerTwo < colSizeTwo) {
                                 value = Double.parseDouble(inputText.getText().toString());
@@ -597,7 +632,11 @@ public class MatrixCalculator extends Fragment{
                                 if (colTrackerTwo + 1 < colSizeTwo) {
                                     colTrackerTwo++;
                                 } else {
+                                    matrixViewTwo.append("|");
                                     matrixViewTwo.append("\n");
+                                    if (rowTrackerTwo != rowSizeTwo-1) {
+                                        matrixViewTwo.append("| ");
+                                    }
                                     rowTrackerTwo++;
                                     colTrackerTwo = 0;
                                     if (rowTrackerTwo >= rowSizeTwo) {
@@ -620,6 +659,7 @@ public class MatrixCalculator extends Fragment{
                     }
                     if (isFullOne && isFullTwo) {
                         matrixViewOne.setText("");
+                        matrixViewOne.append("| ");
                         ansMatrix = new double[rowSizeOne][colSizeOne];
                         double valOne;
                         double valTwo;
@@ -628,6 +668,7 @@ public class MatrixCalculator extends Fragment{
                         for (a = 0; a < ansMatrix.length; a++) {
                             if (b != 0) {
                                 matrixViewOne.append("\n");
+                                matrixViewOne.append("| ");
                             }
                             for (b = 0; b < ansMatrix[a].length; b++) {
                                 valOne = matrixOne[a][b];
@@ -638,6 +679,7 @@ public class MatrixCalculator extends Fragment{
                                 String valueTrimmed = trimZeros(Double.valueOf(valueString));
                                 matrixViewOne.append(valueTrimmed + " ");
                             }
+                            matrixViewOne.append("|");
                         }
                         matrixCreated.setText(getString(R.string.answerMatrix));
                         minusClicked = false;

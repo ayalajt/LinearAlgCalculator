@@ -48,7 +48,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.sevenButtonForMatrix)).perform(click()); // INPUT VALUES: 9 0, 5 7
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("10 2 \n8 11 "))); // ANSWER MATRIX: 10 2 , 8 11
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 10 2 |\n| 8 11 |"))); // ANSWER MATRIX: 10 2 , 8 11
     }
 
     // Unit Test 2 for Scenario 1: Matrix Addition
@@ -84,7 +84,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click()); // INPUT VALUES: 9 , 0 , 12
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("8 \n5 \n9 "))); // ANSWER MATRIX: 8 , 5 , 9
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 8 |\n| 5 |\n| 9 |"))); // ANSWER MATRIX: 8 , 5 , 9
     }
 
     // Unit Test 3 for Scenario 1: Matrix Addition
@@ -151,7 +151,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.fourButtonForMatrix)).perform(click());
         onView(withId(R.id.zeroButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click()); // INPUT VALUES: -1 -2 -3 -4, 10 20 30 40
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("0 0 0 0 \n0 0 0 0 "))); // ANSWER MATRIX: 0 0 0 0 0 , 0 0 0 0 0
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 0 0 0 0 |\n| 0 0 0 0 |"))); // ANSWER MATRIX: 0 0 0 0 0 , 0 0 0 0 0
     }
 
     // Unit Test 1 for Scenario 2: Matrix Subtraction
@@ -186,7 +186,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click()); // INPUT VALUES: 4 0, 9 1
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-3 2 \n-6 3 "))); // ANSWER MATRIX: -3 2 , -6 3
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -3 2 |\n| -6 3 |"))); // ANSWER MATRIX: -3 2 , -6 3
     }
 
     // Unit Test 2 for Scenario 2: Matrix Subtraction
@@ -232,7 +232,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click()); // INPUT VALUES: 100 5 -999 2
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-1 895 1000 -232 "))); // ANSWER MATRIX: -1 895 1000 -232
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -1 895 1000 -232 |"))); // ANSWER MATRIX: -1 895 1000 -232
     }
 
     // Unit Test 3 for Scenario 2: Matrix Subtraction
@@ -266,7 +266,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.negateButtonForMatrix)).perform(click()); // INPUT VALUE: -33333
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("45678 "))); // ANSWER MATRIX: 45678
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 45678 |"))); // ANSWER MATRIX: 45678
     }
 
 
@@ -292,7 +292,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.nineButtonForMatrix)).perform(click()); // INPUT VALUE: 9
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-4 "))); // ANSWER MATRIX: -4
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -4 |"))); // ANSWER MATRIX: -4
         onView(withId(R.id.plusButtonForMatrix)).perform(click()); // INPUT OPERATION
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click()); // INPUT ROW SIZE
@@ -302,7 +302,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.sixButtonForMatrix)).perform(click());
         onView(withId(R.id.zeroButtonForMatrix)).perform(click()); // INPUT VALUE: 60
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("56 "))); // ANSWER MATRIX: 56
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 56 |"))); // ANSWER MATRIX: 56
     }
 
     // Unit Test 2 for Scenario 3: Matrix Subtraction & Addition
@@ -342,7 +342,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.zeroButtonForMatrix)).perform(click()); // INPUT VALUE: 9 8 , 30 0
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-9 82 \n-22 -432 "))); // ANSWER MATRIX: -9 82 ,-22 -432
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -9 82 |\n| -22 -432 |"))); // ANSWER MATRIX: -9 82 ,-22 -432
         onView(withId(R.id.plusButtonForMatrix)).perform(click()); // INPUT OPERATION
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click()); // INPUT ROW SIZE
@@ -364,7 +364,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click()); // INPUT VALUE: 1110 78 , -3 431
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("1101 160 \n-25 -1 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 1101 160 |\n| -25 -1 |")));
     }
 
     // Unit Test 3 for Scenario 3: Matrix Subtraction & Addition
@@ -408,7 +408,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.threeButtonForMatrix)).perform(click()); // INPUT VALUE: 500 , 1 , 33
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-500 \n199 \n49967 "))); // ANSWER MATRIX
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -500 |\n| 199 |\n| 49967 |"))); // ANSWER MATRIX
         onView(withId(R.id.plusButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.threeButtonForMatrix)).perform(click()); // INPUT ROW SIZE
@@ -431,7 +431,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.negateButtonForMatrix)).perform(click()); // INPUT VALUE: 1234567 , -999 , -2
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("1234067 \n-800 \n49965 "))); // ANSWER MATRIX
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 1234067 |\n| -800 |\n| 49965 |"))); // ANSWER MATRIX
     }
 
     // Unit Test 1 for Scenario 1: Matrix Determinant
@@ -560,7 +560,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.negateButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click()); // 111 + -23
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("88 "))); // ANS = 88
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 88 |"))); // ANS = 88
         onView(withId(R.id.detButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.matrixViewTwo)).check(matches(withText("88"))); // DET = 88
@@ -604,7 +604,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click()); // 1.2 5 , -8
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click()); // 1.2 5 , -8 1
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("1.2 8.2 \n1 -4 "))); // ANSWER
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 1.2 8.2 |\n| 1 -4 |"))); // ANSWER
         onView(withId(R.id.detButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.matrixViewTwo)).check(matches(withText("-13"))); // DET = -13
@@ -662,7 +662,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("10 10 10 \n10 10 10 \n10 10 10 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 10 10 10 |\n| 10 10 10 |\n| 10 10 10 |")));
         onView(withId(R.id.detButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.matrixViewTwo)).check(matches(withText("0")));
@@ -690,7 +690,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.negateButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click()); // 18 * -2
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-36 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -36 |")));
         onView(withId(R.id.detButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.matrixViewTwo)).check(matches(withText("-36")));
@@ -737,7 +737,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.decimalButtonForMatrix)).perform(click());
         onView(withId(R.id.fiveButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-9 44.25 \n2.5 27.25 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -9 44.25 |\n| 2.5 27.25 |")));
         onView(withId(R.id.detButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.matrixViewTwo)).check(matches(withText("-355.875"))); // DET
@@ -795,7 +795,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("39 32 25 \n84 69 54 \n138 114 90 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 39 32 25 |\n| 84 69 54 |\n| 138 114 90 |")));
         onView(withId(R.id.detButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.matrixViewTwo)).check(matches(withText("0")));
@@ -825,7 +825,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click()); // 5 , 3
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("13 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 13 |")));
     }
 
     // Unit Test 2 for Scenario 1: Matrix Multiplication
@@ -872,7 +872,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.zeroButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("592.2 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 592.2 |")));
     }
 
 
@@ -922,7 +922,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-51 195 \n-20 66 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -51 195 |\n| -20 66 |")));
     }
 
     // Unit Test 1 for Scenario 2: Matrix Addition & Multiplication
@@ -957,7 +957,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("5 5 \n5 5 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 5 5 |\n| 5 5 |")));
         onView(withId(R.id.multiplyButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
@@ -982,7 +982,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.sevenButtonForMatrix)).perform(click());
         onView(withId(R.id.negateButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("15.5 -5 -14 \n15.5 -5 -14 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 15.5 -5 -14 |\n| 15.5 -5 -14 |")));
     }
 
     // Unit Test 2 for Scenario 2: Matrix Addition & Multiplication
@@ -1009,7 +1009,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.zeroButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("21 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 21 |")));
         onView(withId(R.id.multiplyButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
@@ -1033,7 +1033,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("63.42 -441 31.54 42 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 63.42 -441 31.54 42 |")));
     }
 
     // Unit Test 3 for Scenario 2: Matrix Addition & Multiplication
@@ -1091,7 +1091,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("7761 13399 \n-5000 287 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 7761 13399 |\n| -5000 287 |")));
         onView(withId(R.id.multiplyButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
@@ -1107,7 +1107,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.zeroButtonForMatrix)).perform(click());
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("31282497 \n-1396439 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 31282497 |\n| -1396439 |")));
     }
 
     // Unit Test 1 for Scenario 3: Matrix Multiplication & Subtraction
@@ -1146,7 +1146,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.decimalButtonForMatrix)).perform(click());
         onView(withId(R.id.fourButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-74246.86 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -74246.86 |")));
         onView(withId(R.id.minusButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
@@ -1162,7 +1162,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.threeButtonForMatrix)).perform(click());
         onView(withId(R.id.negateButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("-20033.56 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| -20033.56 |")));
     }
 
     // Unit Test 2 for Scenario 3: Matrix Multiplication & Subtraction
@@ -1211,7 +1211,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("260256 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 260256 |")));
         onView(withId(R.id.minusButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.oneButtonForMatrix)).perform(click());
@@ -1220,7 +1220,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.zeroButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("260256 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 260256 |")));
     }
 
     // Unit Test 3 for Scenario 3: Matrix Multiplication & Subtraction
@@ -1255,7 +1255,7 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("32 20 \n80 52 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 32 20 |\n| 80 52 |")));
         onView(withId(R.id.minusButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
         onView(withId(R.id.twoButtonForMatrix)).perform(click());
@@ -1274,6 +1274,6 @@ public class MatrixCalculatorTests {
         onView(withId(R.id.fourButtonForMatrix)).perform(click());
         onView(withId(R.id.zeroButtonForMatrix)).perform(click());
         onView(withId(R.id.enterButtonForMatrix)).perform(click());
-        onView(withId(R.id.matrixViewOne)).check(matches(withText("22 0 \n50 12 ")));
+        onView(withId(R.id.matrixViewOne)).check(matches(withText("| 22 0 |\n| 50 12 |")));
     }
 }
