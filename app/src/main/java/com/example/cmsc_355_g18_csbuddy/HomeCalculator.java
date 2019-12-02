@@ -349,12 +349,13 @@ public class HomeCalculator extends Fragment {
                 String inputTextStr = inputText.getText().toString();
                 String inputBase = inputBases.getSelectedItem().toString();
                 String outputBase = outputBases.getSelectedItem().toString();
-                String answer = BaseCalculator.calculate(answerTextStr + inputTextStr, inputBase, outputBase);
 
                 if(answerTextStr.contains("=")){
                     answerText.setText("");
                     answerTextStr = "";
                 }
+
+                String answer = BaseCalculator.calculate(answerTextStr + inputTextStr, inputBase, outputBase);
 
                 if (inputBase.equals("Bin")) {
 

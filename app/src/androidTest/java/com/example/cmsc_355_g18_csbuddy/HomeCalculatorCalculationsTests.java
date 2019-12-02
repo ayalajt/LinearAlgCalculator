@@ -98,5 +98,4 @@ public class HomeCalculatorCalculationsTests {
         onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("752 / 80 = 9.4")));
     }
-
 }
