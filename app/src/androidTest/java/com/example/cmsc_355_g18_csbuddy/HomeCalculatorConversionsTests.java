@@ -78,10 +78,10 @@ public class HomeCalculatorConversionsTests {
         onData(allOf(is(instanceOf(String.class)), is("Bin"))).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("110010")));
         onView(withId(R.id.equalsButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("0")));
@@ -96,8 +96,8 @@ public class HomeCalculatorConversionsTests {
         onView(withId(R.id.outputBases)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("Bin"))).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("1001")));
         onView(withId(R.id.equalsButton)).perform(click());
@@ -113,12 +113,12 @@ public class HomeCalculatorConversionsTests {
         onView(withId(R.id.outputBases)).perform(click());
         onData(allOf(is(instanceOf(String.class)), is("Hex"))).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
         onView(withId(R.id.oneButton)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("1011110")));
         onView(withId(R.id.equalsButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("0")));
@@ -168,7 +168,7 @@ public class HomeCalculatorConversionsTests {
         onView(withId(R.id.threeButton)).perform(click());
         onView(withId(R.id.sixButton)).perform(click());
         onView(withId(R.id.fButton)).perform(click());
-        onView(withId(R.id.button0)).perform(click());
+        onView(withId(R.id.zeroButton)).perform(click());
         onView(withId(R.id.dButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("36F0D")));
         onView(withId(R.id.equalsButton)).perform(click());

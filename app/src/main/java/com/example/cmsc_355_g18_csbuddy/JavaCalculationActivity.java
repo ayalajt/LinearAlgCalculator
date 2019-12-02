@@ -1,6 +1,5 @@
 package com.example.cmsc_355_g18_csbuddy;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -10,16 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.ArrayList;
 
 public class JavaCalculationActivity extends Fragment{
 
@@ -247,7 +242,7 @@ public class JavaCalculationActivity extends Fragment{
     }
 
     private void bobTheButtonBuilder(View v){
-        buttonZero = v.findViewById(R.id.button0);
+        buttonZero = v.findViewById(R.id.zeroButton);
         buttonOne = v.findViewById(R.id.button1);
         buttonTwo = v.findViewById(R.id.button2);
         buttonThree = v.findViewById(R.id.button3);

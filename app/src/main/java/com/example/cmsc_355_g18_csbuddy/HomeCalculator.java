@@ -39,7 +39,7 @@ public class HomeCalculator extends Fragment {
         Button sevenButton = (Button) root.findViewById(R.id.sevenButton);
         Button eightButton = (Button) root.findViewById(R.id.eightButton);
         Button nineButton = (Button) root.findViewById(R.id.nineButton);
-        Button zeroButton = (Button) root.findViewById(R.id.button0);
+        Button zeroButton = (Button) root.findViewById(R.id.zeroButton);
         Button aButton = (Button) root.findViewById(R.id.aButton);
         Button bButton = (Button) root.findViewById(R.id.bButton);
         Button cButton = (Button) root.findViewById(R.id.cButton);
