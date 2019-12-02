@@ -28,12 +28,32 @@
     <string name="decimalButton">.</string>
     <string name="negateButton">( - )</string>
     <string name="enterButton">ENTER</string>
-    <string name="deleteButton">DELETE</string>
-    <string name="inputMessageRow">INPUT MATRIX ROW SIZE:</string>
-    <string name="inputMessageColumn">INPUT MATRIX COLUMN SIZE:</string>
+    <string name="deleteButton">DEL</string>
+    <string name="inputRow">INPUT MATRIX ROW SIZE</string>
+    <string name="inputValidRow">INPUT VALID ROW SIZE</string>
+    <string name="inputValidCol">INPUT VALID COLUMN SIZE</string>
+    <string name="inputCol">INPUT MATRIX COLUMN SIZE</string>
+    <string name="inputValues">INPUT VALUES</string>
+    <string name="inputOp">INPUT OPERATION</string>
+    <string name="squareMatrix">MUST BE SQUARE MATRIX</string>
+    <string name="detMatrix">DETERMINANT OF MATRIX</string>
+    <string name="answerMatrix">ANSWER MATRIX</string>
     <string name="inputMatrixSize">_</string>
-    <string name="MatrixCreated">MATRIX:</string>
-    <string name="MatrixView"></string>
+    <string name="MatrixCreated">MATRIX</string>
+    <string name="MatrixTab">MATRIX</string>
+    <string name="Determinant">DET</string>
+    <string name="addOne">%1$s1</string>
+    <string name="addTwo">%1$s2</string>
+    <string name="addThree">%1$s3</string>
+    <string name="addFour">%1$s4</string>
+    <string name="addFive">%1$s5</string>
+    <string name="addSix">%1$s6</string>
+    <string name="addSeven">%1$s7</string>
+    <string name="addEight">%1$s8</string>
+    <string name="addNine">%1$s9</string>
+    <string name="addZero">%1$s0</string>
+    <string name="addDecimal">%1$s.</string>
+
 
     <string name="repTextView">Repetition</string>
     <string name="combRadioButton">Combination</string>
