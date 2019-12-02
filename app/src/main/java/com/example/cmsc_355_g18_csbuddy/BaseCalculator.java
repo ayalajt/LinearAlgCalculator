@@ -7,7 +7,30 @@ public class BaseCalculator {
 
     public static String calculate(String inputExpression, String inputBase, String outputBase){
         if(inputBase.equals("Bin")){
-            return "not ready";
+            if(inputExpression.contains("A") || inputExpression.contains("B") || inputExpression.contains("C") || inputExpression.contains("D") || inputExpression.contains("E") || inputExpression.contains("F") || inputExpression.contains("2") || inputExpression.contains("3") || inputExpression.contains("4") || inputExpression.contains("5") || inputExpression.contains("6") || inputExpression.contains("7") || inputExpression.contains("8") || inputExpression.contains("9")){
+                return "Not a valid binary expression";
+            }
+            else{
+                String decimalExpression = binaryExpressionToDecimal(inputExpression);
+                String answer = decimalCalculate(decimalExpression);
+                if(outputBase.equals("Bin")){
+                    int intAnswer = (int) Double.parseDouble(answer);
+                    answer = Integer.toString(intAnswer);
+                    return BaseConverter.decimalToBinary(answer);
+                }
+                else if(outputBase.equals("Dec")){
+                    if(answer.contains(".0")) {
+                        int intAnswer = (int) Double.parseDouble(answer);
+                        answer = Integer.toString(intAnswer);
+                    }
+                    return answer;
+                }
+                else{
+                    int intAnswer = (int) Double.parseDouble(answer);
+                    answer = Integer.toString(intAnswer);
+                    return BaseConverter.decimalToHex(answer);
+                }
+            }
         }
         else if(inputBase.equals("Dec")){
             if(inputExpression.contains("A") || inputExpression.contains("B") || inputExpression.contains("C") || inputExpression.contains("D") || inputExpression.contains("E") || inputExpression.contains("F")){
@@ -35,7 +58,25 @@ public class BaseCalculator {
             }
         }
         else{
-            return "not ready";
+            String decimalExpression = hexExpressionToDecimal(inputExpression);
+            String answer = decimalCalculate(decimalExpression);
+            if(outputBase.equals("Bin")){
+                int intAnswer = (int) Double.parseDouble(answer);
+                answer = Integer.toString(intAnswer);
+                return BaseConverter.decimalToBinary(answer);
+            }
+            else if(outputBase.equals("Dec")){
+                if(answer.contains(".0")) {
+                    int intAnswer = (int) Double.parseDouble(answer);
+                    answer = Integer.toString(intAnswer);
+                }
+                return answer;
+            }
+            else{
+                int intAnswer = (int) Double.parseDouble(answer);
+                answer = Integer.toString(intAnswer);
+                return BaseConverter.decimalToHex(answer);
+            }
         }
     }
 
@@ -138,5 +179,73 @@ public class BaseCalculator {
         } else {
             return true;
         }
+    }
+
+    private static String binaryExpressionToDecimal(String binaryExpression){
+        ArrayList<String> binaryTerms = new ArrayList<String>();
+        ArrayList<String> operators = new ArrayList<String>();
+        ArrayList<String> decimalTerms = new ArrayList<String>();
+
+        String[] expression = binaryExpression.split(" ");
+
+        for(int i = 0; i < expression.length; i++){
+            if(i % 2 == 0){
+                binaryTerms.add(expression[i]);
+            }
+            else{
+                operators.add(expression[i]);
+            }
+        }
+
+        for(String term : binaryTerms){
+            decimalTerms.add(BaseConverter.binaryToDecimal(term));
+        }
+
+        String decimalExpression = "";
+
+        for(int i = 0; i < decimalTerms.size() - 1; i++){
+            decimalExpression += decimalTerms.get(i);
+            decimalExpression += " ";
+            decimalExpression += operators.get(i);
+            decimalExpression += " ";
+        }
+
+        decimalExpression += decimalTerms.get(decimalTerms.size() - 1);
+
+        return decimalExpression;
+    }
+
+    private static String hexExpressionToDecimal(String hexExpression){
+        ArrayList<String> hexTerms = new ArrayList<String>();
+        ArrayList<String> operators = new ArrayList<String>();
+        ArrayList<String> decimalTerms = new ArrayList<String>();
+
+        String[] expression = hexExpression.split(" ");
+
+        for(int i = 0; i < expression.length; i++){
+            if(i % 2 == 0){
+                hexTerms.add(expression[i]);
+            }
+            else{
+                operators.add(expression[i]);
+            }
+        }
+
+        for(String term : hexTerms){
+            decimalTerms.add(BaseConverter.hexToDecimal(term));
+        }
+
+        String decimalExpression = "";
+
+        for(int i = 0; i < decimalTerms.size() - 1; i++){
+            decimalExpression += decimalTerms.get(i);
+            decimalExpression += " ";
+            decimalExpression += operators.get(i);
+            decimalExpression += " ";
+        }
+
+        decimalExpression += decimalTerms.get(decimalTerms.size() - 1);
+
+        return decimalExpression;
     }
 }
