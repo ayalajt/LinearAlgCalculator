@@ -39,12 +39,12 @@ public class JavaCalculation implements JavaArithmetic {
             return n.floatValue();
         else if (t == DataTypes.INT)
             return n.intValue();
-        else if (t == DataTypes.LONG)
-            return n.longValue();
         else if (t == DataTypes.SHORT)
             return n.shortValue();
         else
-            throw new NumberFormatException();
+            return n.longValue();
+//        else
+//            throw new NumberFormatException();
     }
 
     @Override
