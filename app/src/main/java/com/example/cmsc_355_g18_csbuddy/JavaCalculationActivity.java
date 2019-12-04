@@ -73,7 +73,7 @@ public class JavaCalculationActivity extends Fragment{
                 android.R.layout.simple_spinner_item, primitveDataTypes);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primitiveTypesSpinner2.setAdapter(adapter2);
-        primitiveTypesSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        primitiveTypesSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 t2 = (JavaArithmetic.DataTypes)adapterView.getItemAtPosition(i);
@@ -93,9 +93,9 @@ public class JavaCalculationActivity extends Fragment{
             @Override
             public void onClick(View view) {
                 str = numberTextLeft.getText()+"";
-                number1 = Long.parseLong(str);
+                number1 = Double.parseDouble(str);
                 str = numberTextRight.getText()+"";
-                number2 = Long.parseLong(str);
+                number2 = Double.parseDouble(str);
                 JavaCalculation c = new JavaCalculation(t1, number1, t2, number2);
                 if(operator.equals("+"))
                     c.add();

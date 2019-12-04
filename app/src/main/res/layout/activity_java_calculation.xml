@@ -50,7 +50,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="96dp"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="number|numberDecimal|numberSigned"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +59,7 @@
         android:layout_width="176dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="number"
+        android:inputType="number|numberDecimal|numberSigned"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/numberTextLeft" />
 

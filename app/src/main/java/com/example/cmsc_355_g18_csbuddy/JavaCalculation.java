@@ -32,7 +32,7 @@ public class JavaCalculation implements JavaArithmetic {
      Input       :a data type to cast the number as, a raw value encapsulated in a Number obj
      Output      :a Number obj containing the approximate value
      *****************************************************************/
-    private Number approxNumByType(DataTypes t, Number n) {
+    public static Number approxNumByType(DataTypes t, Number n) {
         if (t == DataTypes.DOUBLE)
             return n.doubleValue();
         else if (t == DataTypes.FLOAT)
@@ -41,30 +41,32 @@ public class JavaCalculation implements JavaArithmetic {
             return n.intValue();
         else if (t == DataTypes.SHORT)
             return n.shortValue();
-        else
+        else if (t == DataTypes.LONG)
             return n.longValue();
+        else
+            return n.shortValue();
 //        else
 //            throw new NumberFormatException();
     }
 
     @Override
     public void add() {
-        result = operand1.longValue() + operand2.longValue();
+        result = operand1.doubleValue() + operand2.doubleValue();
     }
 
     @Override
     public void subtract() {
-        result = operand1.longValue() - operand2.longValue();
+        result = operand1.doubleValue() - operand2.doubleValue();
     }
 
     @Override
     public void multiply() {
-        result = operand1.longValue() * operand2.longValue();
+        result = operand1.doubleValue() * operand2.doubleValue();
     }
 
     @Override
     public void divide() {
-        result = operand1.longValue() / operand2.longValue();
+        result = operand1.doubleValue() / operand2.doubleValue();
     }
 
     public String getResult() {
