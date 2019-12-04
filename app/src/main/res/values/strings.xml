@@ -68,6 +68,7 @@
     <string name="truthTab">Truth</string>
     <string name="javaTab">Java</string>
     <string name="calcTab">Calc</string>
+    <string name="answer">Answer:</string>
 
     <string-array name="bases">
         <item>Dec</item>

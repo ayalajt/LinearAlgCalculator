@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,36 +25,23 @@ public class JavaCalculationActivity extends Fragment{
     private JavaArithmetic.DataTypes t1;
     private JavaArithmetic.DataTypes t2;
 
-    //if inputting into number 1, true; else false
-    private boolean left = true;
-
-    private String number1 = "";
-    private String number2 = "";
+    private Number number1 = 0;
+    private String str = "";
+    private Number number2 = 0;
     private String operator = "+";
     private String answer = "";
 
-    private TextView view1;
-    private TextView view2;
     private TextView viewOperation;
     private TextView viewAnswer;
 
-    private Button buttonZero;
-    private Button buttonOne;
-    private Button buttonTwo;
-    private Button buttonThree;
-    private Button buttonFour;
-    private Button buttonFive;
-    private Button buttonSix;
-    private Button buttonSeven;
-    private Button buttonEight;
-    private Button buttonNine;
-    private Button buttonPlus;
-    private Button buttonMinus;
+    private EditText numberTextLeft;
+    private EditText numberTextRight;
+
+    private Button buttonCalculate;
+    private Button buttonAdd;
+    private Button buttonSubtract;
     private Button buttonMultiply;
     private Button buttonDivide;
-    private Button buttonNegative;
-    private Button buttonDecimal;
-    private Button buttonCalculate;
 
     @Override
     public View onCreateView(
@@ -85,7 +73,7 @@ public class JavaCalculationActivity extends Fragment{
                 android.R.layout.simple_spinner_item, primitveDataTypes);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primitiveTypesSpinner2.setAdapter(adapter2);
-        primitiveTypesSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        primitiveTypesSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 t2 = (JavaArithmetic.DataTypes)adapterView.getItemAtPosition(i);
@@ -98,96 +86,32 @@ public class JavaCalculationActivity extends Fragment{
         });
 
         bobTheButtonBuilder(root);
-        buildTextViews(root);
+        bobTheTextViewBuilder(root);
+        bobTheEditTextBuilder(root);
 
-        buttonZero.setOnClickListener(new View.OnClickListener() {
+        buttonCalculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(left)
-                    number1 += "0";
-                else
-                    number2 += "0";
+                str = numberTextLeft.getText()+"";
+                number1 = Double.parseDouble(str);
+                str = numberTextRight.getText()+"";
+                number2 = Double.parseDouble(str);
+                JavaCalculation c = new JavaCalculation(t1, number1, t2, number2);
+                if(operator.equals("+"))
+                    c.add();
+                else if(operator.equals("-"))
+                    c.subtract();
+                else if(operator.equals("x"))
+                    c.multiply();
+                else if(operator.equals("/"))
+                    c.divide();
+
+                answer = c.getResult();
+                viewAnswer.setText(answer);
             }
         });
 
-        buttonOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "1";
-            }
-        });
-
-        buttonTwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "2";
-            }
-        });
-
-        buttonThree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "3";
-            }
-        });
-
-        buttonFour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "4";
-            }
-        });
-
-        buttonFive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "5";
-            }
-        });
-
-        buttonSix.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "6";
-            }
-        });
-
-        buttonSeven.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "7";
-            }
-        });
-
-        buttonEight.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "8";
-            }
-        });
-
-        buttonNine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "9";
-            }
-        });
-
-        buttonDecimal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = ".";
-            }
-        });
-
-        buttonNegative.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String s = "-";
-            }
-        });
-
-        buttonPlus.setOnClickListener(new View.OnClickListener() {
+        buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 operator = "+";
@@ -195,7 +119,7 @@ public class JavaCalculationActivity extends Fragment{
             }
         });
 
-        buttonMinus.setOnClickListener(new View.OnClickListener() {
+        buttonSubtract.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 operator = "-";
@@ -206,7 +130,7 @@ public class JavaCalculationActivity extends Fragment{
         buttonMultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                operator = "X";
+                operator = "x";
                 viewOperation.setText(operator);
             }
         });
@@ -218,53 +142,24 @@ public class JavaCalculationActivity extends Fragment{
                 viewOperation.setText(operator);
             }
         });
-
-        buttonCalculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                JavaCalculation c = new JavaCalculation(t1, Long.parseLong(number1), t2, Long.parseLong(number2));
-                if(operator.equals("+"))
-                    c.add();
-                else if(operator.equals("-"))
-                    c.subtract();
-                else if(operator.equals("X"))
-                    c.multiply();
-                else if(operator.equals("/"))
-                    c.divide();
-
-                answer += c.getResult();
-            }
-        });
-
-        //insert text view handlers here
-
         return root;
     }
 
     private void bobTheButtonBuilder(View v){
-        buttonZero = v.findViewById(R.id.zeroButton);
-        buttonOne = v.findViewById(R.id.button1);
-        buttonTwo = v.findViewById(R.id.button2);
-        buttonThree = v.findViewById(R.id.button3);
-        buttonFour = v.findViewById(R.id.button4);
-        buttonFive = v.findViewById(R.id.button5);
-        buttonSix = v.findViewById(R.id.button6);
-        buttonSeven = v.findViewById(R.id.button7);
-        buttonEight = v.findViewById(R.id.button8);
-        buttonNine = v.findViewById(R.id.button9);
-        buttonPlus = v.findViewById(R.id.buttonPlus);
-        buttonMinus = v.findViewById(R.id.buttonMinus);
-        buttonMultiply = v.findViewById(R.id.buttonMultiply);
-        buttonDivide = v.findViewById(R.id.buttonDivide);
-        buttonNegative = v.findViewById(R.id.buttonNegative);
-        buttonDecimal = v.findViewById(R.id.buttonDecimal);
         buttonCalculate = v.findViewById(R.id.buttonCalculate);
+        buttonAdd = v.findViewById(R.id.add);
+        buttonSubtract = v.findViewById(R.id.subtract);
+        buttonMultiply = v.findViewById(R.id.multiply);
+        buttonDivide = v.findViewById(R.id.divide);
     }
 
-    private void buildTextViews(View v){
-        view1 = v.findViewById(R.id.numberTextView1);
-        view2 = v.findViewById(R.id.numberTextView2);
+    private void bobTheTextViewBuilder(View v){
         viewOperation = v.findViewById(R.id.operatorTextView);
-        viewAnswer = v.findViewById(R.id.answerText);
+        viewAnswer = v.findViewById(R.id.answerTextView);
+    }
+
+    private void bobTheEditTextBuilder(View v){
+        numberTextLeft = v.findViewById(R.id.numberTextLeft);
+        numberTextRight = v.findViewById(R.id.numberTextRight);
     }
 }
