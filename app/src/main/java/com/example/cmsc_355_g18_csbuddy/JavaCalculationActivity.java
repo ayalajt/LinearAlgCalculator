@@ -243,27 +243,12 @@ public class JavaCalculationActivity extends Fragment{
 
     private void bobTheButtonBuilder(View v){
         buttonZero = v.findViewById(R.id.zeroButton);
-        buttonOne = v.findViewById(R.id.button1);
-        buttonTwo = v.findViewById(R.id.button2);
-        buttonThree = v.findViewById(R.id.button3);
-        buttonFour = v.findViewById(R.id.button4);
-        buttonFive = v.findViewById(R.id.button5);
-        buttonSix = v.findViewById(R.id.button6);
-        buttonSeven = v.findViewById(R.id.button7);
-        buttonEight = v.findViewById(R.id.button8);
-        buttonNine = v.findViewById(R.id.button9);
-        buttonPlus = v.findViewById(R.id.buttonPlus);
-        buttonMinus = v.findViewById(R.id.buttonMinus);
-        buttonMultiply = v.findViewById(R.id.buttonMultiply);
-        buttonDivide = v.findViewById(R.id.buttonDivide);
-        buttonNegative = v.findViewById(R.id.buttonNegative);
-        buttonDecimal = v.findViewById(R.id.buttonDecimal);
+
         buttonCalculate = v.findViewById(R.id.buttonCalculate);
     }
 
     private void buildTextViews(View v){
-        view1 = v.findViewById(R.id.numberTextView1);
-        view2 = v.findViewById(R.id.numberTextView2);
+
         viewOperation = v.findViewById(R.id.operatorTextView);
         viewAnswer = v.findViewById(R.id.answerText);
     }
