@@ -3,6 +3,7 @@ package com.example.cmsc_355_g18_csbuddy;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
+import android.widget.Toast;
 
 public class HomeCalculator extends Fragment {
     public View onCreateView(
@@ -27,6 +29,7 @@ public class HomeCalculator extends Fragment {
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(getContext(), R.array.bases, android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         outputBases.setAdapter(adapter2);
+
 
         final TextView inputText = (TextView) root.findViewById(R.id.inputText);
         final TextView answerText = (TextView) root.findViewById(R.id.answerText);
@@ -487,6 +490,60 @@ public class HomeCalculator extends Fragment {
                     }
 
                 }
+
+            }
+        });
+
+        inputBases.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String base = "";
+
+                if(inputBases.getSelectedItem().equals("Dec")){
+                    base = "decimal";
+                }
+
+                else if(inputBases.getSelectedItem().equals("Bin")){
+                    base = "binary";
+                }
+
+                else{
+                    base = "hexadecimal";
+                }
+
+                Toast.makeText(getContext(), "The input base is set to " + base, Toast.LENGTH_SHORT).show();
+            }
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        outputBases.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                String base = "";
+
+                if(outputBases.getSelectedItem().equals("Dec")){
+                    base = "decimal";
+                }
+
+                else if(outputBases.getSelectedItem().equals("Bin")){
+                    base = "binary";
+                }
+
+                else{
+                    base = "hexadecimal";
+                }
+
+                Toast.makeText(getContext(), "The output base is set to " + base, Toast.LENGTH_SHORT).show();
+            }
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });
