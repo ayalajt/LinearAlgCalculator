@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
  Author     :Sean Stitzer
  Created    :10/9/19
  *****************************************************************/
-public class JavaCalculation implements JavaArithmetic {
+public class JavaCalculation extends JavaArithmetic {
 
     private Number operand1;
     private Number operand2;
