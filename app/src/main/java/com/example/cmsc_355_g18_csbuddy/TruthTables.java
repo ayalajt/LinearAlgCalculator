@@ -1,19 +1,18 @@
-package com.example.cmsc_355_g18_csbuddy;
+/*
+/ Author: Quincey Cuthbert
+/ InitDate: 10/12/19
+*/
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.cmsc_355_g18_csbuddy;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Button;
-import android.widget.EditText;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.lifecycle.Observer;
 import androidx.fragment.app.Fragment;
-
+import java.lang.String;
 import android.os.Bundle;
 
 public class TruthTables extends Fragment {
@@ -24,29 +23,41 @@ public class TruthTables extends Fragment {
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.activity_truth_tables, container, false);
 
+        final TextView ttInputText = root.findViewById(R.id.ttInputText);
+        final TextView ttOutputText = root.findViewById(R.id.ttOutputText);
 
-        final TextView ttInputText = (TextView) root.findViewById(R.id.ttInputText);
-        final TextView ttOutputText = (TextView) root.findViewById(R.id.ttOutputText);
-
-        //Button deleteButtonForTT = (Button) findViewById(R.id.deleteButtonForTT);
-        Button xorButton = (Button) root.findViewById(R.id.xorButton);
-        Button orButton = (Button) root.findViewById(R.id.orButton);
-        Button andButton = (Button) root.findViewById(R.id.andButton);
-        Button pButton = (Button) root.findViewById(R.id.pButton);
-        Button qButton = (Button) root.findViewById(R.id.qButton);
-        Button notButton = (Button) root.findViewById(R.id.notButton);
-        Button leftparenButton = (Button) root.findViewById(R.id.leftparenButton);
-        Button rightparenButton = (Button) root.findViewById(R.id.rightparenButton);
-        Button clearButtonForTT = (Button) root.findViewById(R.id.clearButtonForTT);
-        Button ifButton = (Button) root.findViewById(R.id.ifButton);
-        Button iffButton = (Button) root.findViewById(R.id.iffButton);
-        Button submitButtonForTT = (Button) root.findViewById(R.id.submitButtonForTT);
-
+        Button deleteButtonForTT = root.findViewById(R.id.deleteButtonForTT);
+        Button xorButton = root.findViewById(R.id.xorButton);
+        Button orButton = root.findViewById(R.id.orButton);
+        Button andButton = root.findViewById(R.id.andButton);
+        Button pButton = root.findViewById(R.id.pButton);
+        Button qButton = root.findViewById(R.id.qButton);
+        Button notButton = root.findViewById(R.id.notButton);
+        Button leftparenButton = root.findViewById(R.id.leftparenButton);
+        Button rightparenButton = root.findViewById(R.id.rightparenButton);
+        Button clearButtonForTT = root.findViewById(R.id.clearButtonForTT);
+        Button ifButton = root.findViewById(R.id.ifButton);
+        Button iffButton = root.findViewById(R.id.iffButton);
+        Button submitButtonForTT = root.findViewById(R.id.submitButtonForTT);
 
         xorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ttInputText.setText(ttInputText.getText() + "⊕");
+            }
+        });
+
+        deleteButtonForTT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = ttInputText.getText().toString();
+                if (text.length() == 1) {
+                    ttInputText.setText("");
+                }
+                else {
+                    text = text.substring(0, text.length() - 1);
+                    ttInputText.setText(text);
+                }
             }
         });
 
@@ -102,10 +113,9 @@ public class TruthTables extends Fragment {
         clearButtonForTT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText("");
+                ttInputText.setText(" ");
             }
         });
-
 
         pButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -124,54 +134,124 @@ public class TruthTables extends Fragment {
         submitButtonForTT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean pp = true;
-                boolean qq = false;
-                boolean rr = false;
 
-                String header = "  p  q  r  | p∧q p∨q ¬r\n-----------+-----------\n";
-                String line = "";
-
-
-                for (int p = 0; p <= 1; p++) {
-                    for (int q = 0; q <= 1; q++) {
-
-                        for (int r = 0; r <= 1; r++) {
-                            pp = (p == 1) ? true : false;
-                            qq = (q == 1) ? true : false;
-                            rr = (r == 1) ? true : false;
-
-                            line = line + "\n" + String.format("%3s%3s%3s  |%3s%3s%3s",
-                                    trueOrFalse(pp), trueOrFalse(qq), trueOrFalse(rr),
-                                    trueOrFalse(expressionOne(pp, qq, rr)),
-                                    trueOrFalse(expressionTwo(pp, qq, rr)),
-                                    trueOrFalse(expressionThree(pp, qq, rr)));
-                        }
-                    }
+                if ((ttInputText.getText().toString().equals(" ¬(p∧q)") || ttInputText.getText().toString().equals(" ¬p∨¬q"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "F \n");
                 }
 
-                ttOutputText.setText(header + line);
+                if ((ttInputText.getText().toString().equals(" p→q") || ttInputText.getText().toString().equals(" ¬p∨q") ||
+                        ttInputText.getText().toString().equals(" ¬q→¬p"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "T \n");
+                }
+
+                if ((ttInputText.getText().toString().equals(" p∨q") || ttInputText.getText().toString().equals(" ¬p→q") ||
+                        ttInputText.getText().toString().equals(" q∨p"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "T \n");
+                }
+
+                if ((ttInputText.getText().toString().equals(" p↔q") || ttInputText.getText().toString().equals(" (p→q)∧(q→p)") ||
+                        ttInputText.getText().toString().equals(" ¬p↔¬q") || ttInputText.getText().toString().equals(" (p∧q)∨(¬p∧¬q)") ||
+                        ttInputText.getText().toString().equals(" ¬(p⊕q)"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "T \n");
+                }
+
+                if ((ttInputText.getText().toString().equals(" p⊕q") || ttInputText.getText().toString().equals(" q⊕p") ||
+                        ttInputText.getText().toString().equals(" ¬(p↔q)") || ttInputText.getText().toString().equals(" p↔¬q"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "F \n");
+                }
+
+                if ((ttInputText.getText().toString().equals(" ¬(p∨q)") || ttInputText.getText().toString().equals(" ¬p∧¬q") ||
+                        ttInputText.getText().toString().equals(" ¬(¬p→q)"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "F \n");
+                }
+
+                if ((ttInputText.getText().toString().equals(" p∧q") || ttInputText.getText().toString().equals(" ¬(p→¬q)") ||
+                        ttInputText.getText().toString().equals(" q∧p"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "T \n");
+                        }
+
+                if ((ttInputText.getText().toString().equals(" ¬p∧q") || ttInputText.getText().toString().equals(" p∧¬q"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "F \n");
+                }
+
+                if ((ttInputText.getText().toString().equals(" ¬(p→q)") || ttInputText.getText().toString().equals(" p∧¬q"))){
+                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "F \n"
+                            + "---------\n"
+                            + "T \n"
+                            + "---------\n"
+                            + "F \n");
+                }
             }
-
-            public boolean expressionOne(boolean p, boolean q, boolean r) {
-                return (p & q);
-            }
-
-            public boolean expressionTwo(boolean p, boolean q, boolean r) {
-                return (p | q);
-            }
-
-            public boolean expressionThree(boolean p, boolean q, boolean r) {
-                return !r;
-            }
-
-            public String trueOrFalse(boolean p) {
-                return ((p == true) ? "T" : "F");
-            }
-
-
         });
 
         return root;
     }
-
 }
