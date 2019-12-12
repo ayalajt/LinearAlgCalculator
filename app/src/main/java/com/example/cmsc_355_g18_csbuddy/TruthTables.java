@@ -33,8 +33,8 @@ public class TruthTables extends Fragment {
         Button pButton = root.findViewById(R.id.pButton);
         Button qButton = root.findViewById(R.id.qButton);
         Button notButton = root.findViewById(R.id.notButton);
-        Button leftparenButton = root.findViewById(R.id.leftparenButton);
-        Button rightparenButton = root.findViewById(R.id.rightparenButton);
+        Button leftparentButton = root.findViewById(R.id.leftparenButton);
+        Button rightparentButton = root.findViewById(R.id.rightparenButton);
         Button clearButtonForTT = root.findViewById(R.id.clearButtonForTT);
         Button ifButton = root.findViewById(R.id.ifButton);
         Button iffButton = root.findViewById(R.id.iffButton);
@@ -43,7 +43,8 @@ public class TruthTables extends Fragment {
         xorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "⊕");
+                String setTxt = ttInputText.getText() + "⊕";
+                ttInputText.setText(setTxt);
             }
         });
 
@@ -64,49 +65,56 @@ public class TruthTables extends Fragment {
         orButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "∨");
+                String setTxt = ttInputText.getText() + "∨";
+                ttInputText.setText(setTxt);
             }
         });
 
         andButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "∧");
+                String setTxt = ttInputText.getText() + "∧";
+                ttInputText.setText(setTxt);
             }
         });
 
         notButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "¬");
+                String setTxt = ttInputText.getText() + "¬";
+                ttInputText.setText(setTxt);
             }
         });
 
-        leftparenButton.setOnClickListener(new View.OnClickListener() {
+        leftparentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "(");
+                String setTxt = ttInputText.getText() + "(";
+                ttInputText.setText(setTxt);
             }
         });
 
-        rightparenButton.setOnClickListener(new View.OnClickListener() {
+        rightparentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + ")");
+                String setTxt = ttInputText.getText() + ")";
+                ttInputText.setText(setTxt);
             }
         });
 
         ifButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "→");
+                String setTxt = ttInputText.getText() + "→";
+                ttInputText.setText(setTxt);
             }
         });
 
         iffButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "↔");
+                String setTxt = ttInputText.getText() + "↔";
+                ttInputText.setText(setTxt);
             }
         });
 
@@ -120,14 +128,16 @@ public class TruthTables extends Fragment {
         pButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "p");
+                String setTxt = ttInputText.getText() + "p";
+                ttInputText.setText(setTxt);
             }
         });
 
         qButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ttInputText.setText(ttInputText.getText() + "q");
+                String setTxt = ttInputText.getText() + "q";
+                ttInputText.setText(setTxt);
             }
         });
 
@@ -136,7 +146,7 @@ public class TruthTables extends Fragment {
             public void onClick(View v) {
 
                 if ((ttInputText.getText().toString().equals(" ¬(p∧q)") || ttInputText.getText().toString().equals(" ¬p∨¬q"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
@@ -144,12 +154,13 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
-                            + "F \n");
+                            + "F \n";
+                    ttOutputText.setText(setTxt);
                 }
 
                 if ((ttInputText.getText().toString().equals(" p→q") || ttInputText.getText().toString().equals(" ¬p∨q") ||
                         ttInputText.getText().toString().equals(" ¬q→¬p"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt =  "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
@@ -157,12 +168,13 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
-                            + "T \n");
+                            + "T \n";
+                    ttOutputText.setText(setTxt);
                 }
 
                 if ((ttInputText.getText().toString().equals(" p∨q") || ttInputText.getText().toString().equals(" ¬p→q") ||
                         ttInputText.getText().toString().equals(" q∨p"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
@@ -170,13 +182,14 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
-                            + "T \n");
+                            + "T \n";
+                    ttOutputText.setText(setTxt);
                 }
 
                 if ((ttInputText.getText().toString().equals(" p↔q") || ttInputText.getText().toString().equals(" (p→q)∧(q→p)") ||
                         ttInputText.getText().toString().equals(" ¬p↔¬q") || ttInputText.getText().toString().equals(" (p∧q)∨(¬p∧¬q)") ||
                         ttInputText.getText().toString().equals(" ¬(p⊕q)"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
@@ -184,12 +197,13 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
-                            + "T \n");
+                            + "T \n";
+                    ttOutputText.setText(setTxt);
                 }
 
                 if ((ttInputText.getText().toString().equals(" p⊕q") || ttInputText.getText().toString().equals(" q⊕p") ||
                         ttInputText.getText().toString().equals(" ¬(p↔q)") || ttInputText.getText().toString().equals(" p↔¬q"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
@@ -197,12 +211,13 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
-                            + "F \n");
+                            + "F \n";
+                    ttOutputText.setText(setTxt);
                 }
 
                 if ((ttInputText.getText().toString().equals(" ¬(p∨q)") || ttInputText.getText().toString().equals(" ¬p∧¬q") ||
                         ttInputText.getText().toString().equals(" ¬(¬p→q)"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
@@ -210,12 +225,13 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
-                            + "F \n");
+                            + "F \n";
+                    ttOutputText.setText(setTxt);
                 }
 
                 if ((ttInputText.getText().toString().equals(" p∧q") || ttInputText.getText().toString().equals(" ¬(p→¬q)") ||
                         ttInputText.getText().toString().equals(" q∧p"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
@@ -223,11 +239,12 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
-                            + "T \n");
+                            + "T \n";
+                    ttOutputText.setText(setTxt);
                         }
 
                 if ((ttInputText.getText().toString().equals(" ¬p∧q") || ttInputText.getText().toString().equals(" p∧¬q"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
@@ -235,11 +252,12 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
-                            + "F \n");
+                            + "F \n";
+                    ttOutputText.setText(setTxt);
                 }
 
                 if ((ttInputText.getText().toString().equals(" ¬(p→q)") || ttInputText.getText().toString().equals(" p∧¬q"))){
-                    ttOutputText.setText( "  " + ttInputText.getText() + "  \n"
+                    String setTxt = "  " + ttInputText.getText() + "  \n"
                             + "---------\n"
                             + "F \n"
                             + "---------\n"
@@ -247,7 +265,8 @@ public class TruthTables extends Fragment {
                             + "---------\n"
                             + "T \n"
                             + "---------\n"
-                            + "F \n");
+                            + "F \n";
+                    ttOutputText.setText(setTxt);
                 }
             }
         });

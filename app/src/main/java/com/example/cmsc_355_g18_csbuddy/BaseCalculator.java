@@ -131,11 +131,12 @@ public class BaseCalculator {
         for(int i = 0; i < infixExpression.length(); i++){
             boolean infixCharIsOperator = infixExpression.charAt(i) == '+' || infixExpression.charAt(i) == '-' || infixExpression.charAt(i) == '*' || infixExpression.charAt(i) == '/';
 
+            if(infixExpression.charAt(i) == ' '){
+                continue;
+            }
+
             if(i < infixExpression.length() - 1){
-                if(infixExpression.charAt(i) == ' '){
-                    continue;
-                }
-                else if(infixCharIsOperator){
+                if(infixCharIsOperator){
                     while((!stack.isEmpty()) && OfHigherPrecedence(stack.peek(), infixExpression.charAt(i))){
                         postfixExpression.add(stack.pop().toString());
                     }
@@ -152,10 +153,7 @@ public class BaseCalculator {
                 }
             }
             else{
-                if(infixExpression.charAt(i) == ' '){
-                    continue;
-                }
-                else if(infixCharIsOperator){
+                if(infixCharIsOperator){
                         while((!stack.isEmpty()) && OfHigherPrecedence(stack.peek(), infixExpression.charAt(i))){
                         postfixExpression.add(stack.pop().toString());
                     }
