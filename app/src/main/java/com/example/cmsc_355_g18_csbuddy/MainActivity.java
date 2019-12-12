@@ -4,11 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
-import android.widget.TextView;
 
 import com.example.cmsc_355_g18_csbuddy.main.SectionsPagerAdapter;
 import com.google.android.material.tabs.TabLayout;

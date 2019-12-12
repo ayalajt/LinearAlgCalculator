@@ -14,6 +14,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class HomeCalculator extends Fragment {
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container,
@@ -21,7 +23,7 @@ public class HomeCalculator extends Fragment {
         View root = inflater.inflate(R.layout.activity_home_calculator, container, false);
 
         final Spinner inputBases = root.findViewById(R.id.inputBases);
-        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(getContext(), R.array.bases, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(Objects.requireNonNull(getContext()), R.array.bases, android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         inputBases.setAdapter(adapter1);
 
@@ -31,30 +33,30 @@ public class HomeCalculator extends Fragment {
         outputBases.setAdapter(adapter2);
 
 
-        final TextView inputText = (TextView) root.findViewById(R.id.inputText);
-        final TextView answerText = (TextView) root.findViewById(R.id.answerText);
-        Button oneButton = (Button) root.findViewById(R.id.oneButton);
-        Button twoButton = (Button) root.findViewById(R.id.twoButton);
-        Button threeButton = (Button) root.findViewById(R.id.threeButton);
-        Button fourButton = (Button) root.findViewById(R.id.fourButton);
-        Button fiveButton = (Button) root.findViewById(R.id.fiveButton);
-        Button sixButton = (Button) root.findViewById(R.id.sixButton);
-        Button sevenButton = (Button) root.findViewById(R.id.sevenButton);
-        Button eightButton = (Button) root.findViewById(R.id.eightButton);
-        Button nineButton = (Button) root.findViewById(R.id.nineButton);
-        Button zeroButton = (Button) root.findViewById(R.id.zeroButton);
-        Button aButton = (Button) root.findViewById(R.id.aButton);
-        Button bButton = (Button) root.findViewById(R.id.bButton);
-        Button cButton = (Button) root.findViewById(R.id.cButton);
-        Button dButton = (Button) root.findViewById(R.id.dButton);
-        Button eButton = (Button) root.findViewById(R.id.eButton);
-        Button fButton = (Button) root.findViewById(R.id.fButton);
-        Button plusButton = (Button) root.findViewById(R.id.plusButton);
-        Button minusButton = (Button) root.findViewById(R.id.minusButton);
-        Button multiplyButton = (Button) root.findViewById(R.id.multiplyButton);
-        Button divideButton = (Button) root.findViewById(R.id.divideButton);
-        Button equalsButton = (Button) root.findViewById(R.id.equalsButton);
-        Button clearButton = (Button) root.findViewById(R.id.clearButton);
+        final TextView inputText = root.findViewById(R.id.inputText);
+        final TextView answerText = root.findViewById(R.id.answerText);
+        Button oneButton = root.findViewById(R.id.oneButton);
+        Button twoButton = root.findViewById(R.id.twoButton);
+        Button threeButton = root.findViewById(R.id.threeButton);
+        Button fourButton = root.findViewById(R.id.fourButton);
+        Button fiveButton = root.findViewById(R.id.fiveButton);
+        Button sixButton = root.findViewById(R.id.sixButton);
+        Button sevenButton = root.findViewById(R.id.sevenButton);
+        Button eightButton = root.findViewById(R.id.eightButton);
+        Button nineButton = root.findViewById(R.id.nineButton);
+        Button zeroButton = root.findViewById(R.id.zeroButton);
+        Button aButton = root.findViewById(R.id.aButton);
+        Button bButton = root.findViewById(R.id.bButton);
+        Button cButton = root.findViewById(R.id.cButton);
+        Button dButton = root.findViewById(R.id.dButton);
+        Button eButton = root.findViewById(R.id.eButton);
+        Button fButton = root.findViewById(R.id.fButton);
+        Button plusButton = root.findViewById(R.id.plusButton);
+        Button minusButton = root.findViewById(R.id.minusButton);
+        Button multiplyButton = root.findViewById(R.id.multiplyButton);
+        Button divideButton = root.findViewById(R.id.divideButton);
+        Button equalsButton = root.findViewById(R.id.equalsButton);
+        Button clearButton = root.findViewById(R.id.clearButton);
 
         oneButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +66,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("1");
                 } else {
-                    inputText.setText(inputTextStr + "1");
+                    String setTxt = inputTextStr + "1";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -77,7 +80,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("2");
                 } else {
-                    inputText.setText(inputTextStr + "2");
+                    String setTxt = inputTextStr + "2";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -90,7 +94,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("3");
                 } else {
-                    inputText.setText(inputTextStr + "3");
+                    String setTxt = inputTextStr + "3";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -103,7 +108,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("4");
                 } else {
-                    inputText.setText(inputTextStr + "4");
+                    String setTxt = inputTextStr + "4";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -116,7 +122,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("5");
                 } else {
-                    inputText.setText(inputTextStr + "5");
+                    String setTxt = inputTextStr + "5";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -129,7 +136,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("6");
                 } else {
-                    inputText.setText(inputTextStr + "6");
+                    String setTxt = inputTextStr + "6";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -142,7 +150,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("7");
                 } else {
-                    inputText.setText(inputTextStr + "7");
+                    String setTxt = inputTextStr + "7";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -155,7 +164,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("8");
                 } else {
-                    inputText.setText(inputTextStr + "8");
+                    String setTxt = inputTextStr + "8";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -168,7 +178,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("9");
                 } else {
-                    inputText.setText(inputTextStr + "9");
+                    String setTxt = inputTextStr + "9";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -181,7 +192,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("0");
                 } else {
-                    inputText.setText(inputTextStr + "0");
+                    String setTxt = inputTextStr + "0";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -194,7 +206,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("A");
                 } else {
-                    inputText.setText(inputTextStr + "A");
+                    String setTxt = inputTextStr + "A";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -207,7 +220,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("B");
                 } else {
-                    inputText.setText(inputTextStr + "B");
+                    String setTxt = inputTextStr + "B";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -220,7 +234,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("C");
                 } else {
-                    inputText.setText(inputTextStr + "C");
+                    String setTxt = inputTextStr + "C";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -233,7 +248,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("D");
                 } else {
-                    inputText.setText(inputTextStr + "D");
+                    String setTxt = inputTextStr + "D";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -246,7 +262,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("E");
                 } else {
-                    inputText.setText(inputTextStr + "E");
+                    String setTxt = inputTextStr + "E";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -259,7 +276,8 @@ public class HomeCalculator extends Fragment {
                 if (inputTextStr.equals("0")) {
                     inputText.setText("F");
                 } else {
-                    inputText.setText(inputTextStr + "F");
+                    String setTxt = inputTextStr + "F";
+                    inputText.setText(setTxt);
                 }
             }
         });
@@ -269,12 +287,15 @@ public class HomeCalculator extends Fragment {
             public void onClick(View view) {
                 String answerTextStr = answerText.getText().toString();
                 String inputTextStr = inputText.getText().toString();
+                String setTxt;
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
-                    answerText.setText(inputTextStr + " + ");
+                    setTxt = inputTextStr + " + ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 } else {
-                    answerText.setText(answerTextStr + inputTextStr + " + ");
+                    setTxt = answerTextStr + inputTextStr + " + ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 }
             }
@@ -285,12 +306,15 @@ public class HomeCalculator extends Fragment {
             public void onClick(View view) {
                 String answerTextStr = answerText.getText().toString();
                 String inputTextStr = inputText.getText().toString();
+                String setTxt;
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
-                    answerText.setText(inputTextStr + " - ");
+                    setTxt = inputTextStr + " - ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 } else {
-                    answerText.setText(answerTextStr + inputTextStr + " - ");
+                    setTxt = answerTextStr + inputTextStr + " - ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 }
             }
@@ -301,12 +325,15 @@ public class HomeCalculator extends Fragment {
             public void onClick(View view) {
                 String answerTextStr = answerText.getText().toString();
                 String inputTextStr = inputText.getText().toString();
+                String setTxt;
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
-                    answerText.setText(inputTextStr + " * ");
+                    setTxt = inputTextStr + " * ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 } else {
-                    answerText.setText(answerTextStr + inputTextStr + " * ");
+                    setTxt = answerTextStr + inputTextStr + " * ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 }
 
@@ -318,12 +345,15 @@ public class HomeCalculator extends Fragment {
             public void onClick(View view) {
                 String answerTextStr = answerText.getText().toString();
                 String inputTextStr = inputText.getText().toString();
+                String setTxt;
 
                 if (answerTextStr.equals("Answer Box") || answerTextStr.contains("=")) {
-                    answerText.setText(inputTextStr + " / ");
+                    setTxt = inputTextStr + " / ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 } else {
-                    answerText.setText(answerTextStr + inputTextStr + " / ");
+                    setTxt = answerTextStr + inputTextStr + " / ";
+                    answerText.setText(setTxt);
                     inputText.setText("0");
                 }
 
@@ -352,53 +382,68 @@ public class HomeCalculator extends Fragment {
                 String inputTextStr = inputText.getText().toString();
                 String inputBase = inputBases.getSelectedItem().toString();
                 String outputBase = outputBases.getSelectedItem().toString();
+                String setTxt;
+                String answer = "";
 
                 if(answerTextStr.contains("=")){
                     answerText.setText("");
                     answerTextStr = "";
                 }
 
-                String answer = BaseCalculator.calculate(answerTextStr + inputTextStr, inputBase, outputBase);
+                boolean answerContainsOperator = answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/");
+
+                if(!(answerTextStr.equals("Answer Box") || answerTextStr.equals(""))) {
+                    answer = BaseCalculator.calculate(answerTextStr + inputTextStr, inputBase, outputBase);
+                }
 
                 if (inputBase.equals("Bin")) {
 
                     if (outputBase.equals("Bin")) {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + inputTextStr);
+                            setTxt = inputTextStr + " = " + inputTextStr;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
+                            setTxt = answerTextStr + inputTextStr + " = " + inputTextStr;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     } else if (outputBase.equals("Dec")) {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr));
+                            setTxt = inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr));
+                            setTxt = answerTextStr + inputTextStr + " = " + BaseConverter.binaryToDecimal(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     } else {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr));
+                            setTxt = inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr));
+                            setTxt = answerTextStr + inputTextStr + " = " + BaseConverter.binaryToHex(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     }
@@ -407,41 +452,50 @@ public class HomeCalculator extends Fragment {
 
                     if (outputBase.equals("Bin")) {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr));
+                            setTxt = inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr));
+                            setTxt = answerTextStr + inputTextStr + " = " + BaseConverter.decimalToBinary(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     } else if (outputBase.equals("Dec")) {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + inputTextStr);
+                            setTxt = inputTextStr + " = " + inputTextStr;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
+                            setTxt = answerTextStr + inputTextStr + " = " + inputTextStr;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     } else {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr));
+                            setTxt = inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr));
+                            setTxt = answerTextStr + inputTextStr + " = " + BaseConverter.decimalToHex(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     }
@@ -450,41 +504,50 @@ public class HomeCalculator extends Fragment {
 
                     if (outputBase.equals("Bin")) {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr));
+                            setTxt = inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr));
+                            setTxt = answerTextStr + inputTextStr + " = " + BaseConverter.hexToBinary(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     } else if (outputBase.equals("Dec")) {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr));
+                            setTxt = inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr));
+                            setTxt = answerTextStr + inputTextStr + " = " + BaseConverter.hexToDecimal(inputTextStr);
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     } else {
                         if (answerTextStr.equals("Answer Box")) {
-                            answerText.setText(inputTextStr + " = " + inputTextStr);
+                            setTxt = inputTextStr + " = " + inputTextStr;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
-                        else if(answerTextStr.contains("+") || answerTextStr.contains("-") || answerTextStr.contains("*") || answerTextStr.contains("/")) {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + answer);
+                        else if(answerContainsOperator) {
+                            setTxt = answerTextStr + inputTextStr + " = " + answer;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                         else {
-                            answerText.setText(answerTextStr + inputTextStr + " = " + inputTextStr);
+                            setTxt = answerTextStr + inputTextStr + " = " + inputTextStr;
+                            answerText.setText(setTxt);
                             inputText.setText("0");
                         }
                     }
@@ -497,7 +560,7 @@ public class HomeCalculator extends Fragment {
         inputBases.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String base = "";
+                String base;
 
                 if(inputBases.getSelectedItem().equals("Dec")){
                     base = "decimal";
@@ -524,7 +587,7 @@ public class HomeCalculator extends Fragment {
         outputBases.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                String base = "";
+                String base;
 
                 if(outputBases.getSelectedItem().equals("Dec")){
                     base = "decimal";

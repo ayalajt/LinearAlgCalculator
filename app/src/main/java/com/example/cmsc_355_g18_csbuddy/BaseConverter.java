@@ -74,72 +74,57 @@ public class BaseConverter {
 
             String hexDgt = "" + hexNum.charAt(i);
 
-            if(hexDgt.equals("0")) {
-                decNum += 0;
-            }
-
-            else if(hexDgt.equals("1")) {
-                decNum += (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("2")) {
-                decNum += 2 *  (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("3")) {
-                decNum += 3 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("4")) {
-                decNum += 4 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("5")) {
-                decNum += 5 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("6")) {
-                decNum += 6 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("7")) {
-                decNum += 7 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("8")) {
-                decNum += 8 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("9")) {
-                decNum += 9 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("A")) {
-                decNum += 10 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("B")) {
-                decNum += 11 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("C")) {
-                decNum += 12 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("D")) {
-                decNum += 13 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("E")) {
-                decNum += 14 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else if(hexDgt.equals("F")) {
-                decNum += 15 * (long) Math.pow(16, hexNum.length() - 1 - i);
-            }
-
-            else {
-                return "Not a valid hex number";
+            switch (hexDgt) {
+                case "0":
+                    decNum += 0;
+                    break;
+                case "1":
+                    decNum += (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "2":
+                    decNum += 2 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "3":
+                    decNum += 3 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "4":
+                    decNum += 4 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "5":
+                    decNum += 5 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "6":
+                    decNum += 6 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "7":
+                    decNum += 7 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "8":
+                    decNum += 8 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "9":
+                    decNum += 9 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "A":
+                    decNum += 10 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "B":
+                    decNum += 11 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "C":
+                    decNum += 12 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "D":
+                    decNum += 13 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "E":
+                    decNum += 14 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                case "F":
+                    decNum += 15 * (long) Math.pow(16, hexNum.length() - 1 - i);
+                    break;
+                default:
+                    return "Not a valid hex number";
             }
 
         }
@@ -169,7 +154,7 @@ public class BaseConverter {
 
     public static String hexToBinary(String hexNum) {
 
-        String binNum = "";
+        StringBuilder binNum = new StringBuilder();
 
         if(hexNum.length() > 15) {
             String firstHexDgt = "" + hexNum.charAt(0);
@@ -186,77 +171,62 @@ public class BaseConverter {
 
             String hexDgt = "" + hexNum.charAt(i);
 
-            if(hexDgt.equals("0")) {
-                binNum += "0000";
-            }
-
-            else if(hexDgt.equals("1")) {
-                binNum += "0001";
-            }
-
-            else if(hexDgt.equals("2")) {
-                binNum += "0010";
-            }
-
-            else if(hexDgt.equals("3")) {
-                binNum += "0011";
-            }
-
-            else if(hexDgt.equals("4")) {
-                binNum += "0100";
-            }
-
-            else if(hexDgt.equals("5")) {
-                binNum += "0101";
-            }
-
-            else if(hexDgt.equals("6")) {
-                binNum += "0110";
-            }
-
-            else if(hexDgt.equals("7")) {
-                binNum += "0111";
-            }
-
-            else if(hexDgt.equals("8")) {
-                binNum += "1000";
-            }
-
-            else if(hexDgt.equals("9")) {
-                binNum += "1001";
-            }
-
-            else if(hexDgt.equals("A")) {
-                binNum += "1010";
-            }
-
-            else if(hexDgt.equals("B")) {
-                binNum += "1011";
-            }
-
-            else if(hexDgt.equals("C")) {
-                binNum += "1100";
-            }
-
-            else if(hexDgt.equals("D")) {
-                binNum += "1101";
-            }
-
-            else if(hexDgt.equals("E")) {
-                binNum += "1110";
-            }
-
-            else if(hexDgt.equals("F")) {
-                binNum += "1111";
-            }
-
-            else {
-                return "Not a valid hex number";
+            switch (hexDgt) {
+                case "0":
+                    binNum.append("0000");
+                    break;
+                case "1":
+                    binNum.append("0001");
+                    break;
+                case "2":
+                    binNum.append("0010");
+                    break;
+                case "3":
+                    binNum.append("0011");
+                    break;
+                case "4":
+                    binNum.append("0100");
+                    break;
+                case "5":
+                    binNum.append("0101");
+                    break;
+                case "6":
+                    binNum.append("0110");
+                    break;
+                case "7":
+                    binNum.append("0111");
+                    break;
+                case "8":
+                    binNum.append("1000");
+                    break;
+                case "9":
+                    binNum.append("1001");
+                    break;
+                case "A":
+                    binNum.append("1010");
+                    break;
+                case "B":
+                    binNum.append("1011");
+                    break;
+                case "C":
+                    binNum.append("1100");
+                    break;
+                case "D":
+                    binNum.append("1101");
+                    break;
+                case "E":
+                    binNum.append("1110");
+                    break;
+                case "F":
+                    binNum.append("1111");
+                    break;
+                default:
+                    return "Not a valid hex number";
             }
 
         }
 
-        return binNum;
+        return binNum.toString();
 
     }
 
@@ -273,9 +243,8 @@ public class BaseConverter {
         }
 
         else {
-            String hexNum = decimalToHex(decNum);
 
-            return hexNum;
+            return decimalToHex(decNum);
         }
     }
 
