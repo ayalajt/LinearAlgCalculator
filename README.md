@@ -15,3 +15,6 @@ functionality in the app. While we planned on finishing the Java Data Type Calcu
 pattern we were unable to get the activity to function properly by the due date. We were however able to finish the Matrix Adition, Decimal
 Calculations, and Permutations and Combinations User Stories so we were still able to get three done. Cole also tried to make the Decimal
 Calculations user story function with a Strategy Design patter however he was unable to figure out how to properly implement that as well.
+
+Brief Report of Iteration 3:
+Sean Stitzer: I didn't change the JavaArithmetic class because having those methods is critical to the design pattern that we have implemented. I also didn't change one area where it wanted me to change an "if" to a "switch-case" because it would be more code which wouldn't do anything of value. Here specifically, I'd rather have the readability over the "efficiency." Nothing else to change, really.

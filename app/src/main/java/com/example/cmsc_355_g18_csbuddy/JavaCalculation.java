@@ -7,7 +7,7 @@ package com.example.cmsc_355_g18_csbuddy;
  Author     :Sean Stitzer
  Created    :10/9/19
  *****************************************************************/
-class JavaCalculation extends JavaArithmetic {
+public class JavaCalculation extends JavaArithmetic {
 
     private final Number operand1;
     private final Number operand2;

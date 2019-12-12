@@ -82,35 +82,41 @@ public class BaseCalculator {
 
     private static String decimalCalculate(String inputExpression){
         ArrayList<String> postfixExpression = infixToPostfix(inputExpression);
-        Stack<String> stack = new Stack<String>();
+        Stack<String> stack = new Stack<>();
         for(String part : postfixExpression){
             if(part.contains("1") || part.contains("2") || part.contains("3") || part.contains("4") || part.contains("5") || part.contains("6") || part.contains("7") || part.contains("8") || part.contains("9") || part.contains("0")){
                 stack.push(part);
             }
             else{
-                if(part.equals("+")){
-                    double rightSideValue = Double.parseDouble(stack.pop());
-                    double leftSideValue = Double.parseDouble(stack.pop());
-                    double answer = leftSideValue + rightSideValue;
-                    stack.push(Double.toString(answer));
-                }
-                else if(part.equals("-")){
-                    double rightSideValue = Double.parseDouble(stack.pop());
-                    double leftSideValue = Double.parseDouble(stack.pop());
-                    double answer = leftSideValue - rightSideValue;
-                    stack.push(Double.toString(answer));
-                }
-                else if(part.equals("*")){
-                    double rightSideValue = Double.parseDouble(stack.pop());
-                    double leftSideValue = Double.parseDouble(stack.pop());
-                    double answer = leftSideValue * rightSideValue;
-                    stack.push(Double.toString(answer));
-                }
-                else{
-                    double rightSideValue = Double.parseDouble(stack.pop());
-                    double leftSideValue = Double.parseDouble(stack.pop());
-                    double answer = leftSideValue / rightSideValue;
-                    stack.push(Double.toString(answer));
+                switch (part) {
+                    case "+": {
+                        double rightSideValue = Double.parseDouble(stack.pop());
+                        double leftSideValue = Double.parseDouble(stack.pop());
+                        double answer = leftSideValue + rightSideValue;
+                        stack.push(Double.toString(answer));
+                        break;
+                    }
+                    case "-": {
+                        double rightSideValue = Double.parseDouble(stack.pop());
+                        double leftSideValue = Double.parseDouble(stack.pop());
+                        double answer = leftSideValue - rightSideValue;
+                        stack.push(Double.toString(answer));
+                        break;
+                    }
+                    case "*": {
+                        double rightSideValue = Double.parseDouble(stack.pop());
+                        double leftSideValue = Double.parseDouble(stack.pop());
+                        double answer = leftSideValue * rightSideValue;
+                        stack.push(Double.toString(answer));
+                        break;
+                    }
+                    default: {
+                        double rightSideValue = Double.parseDouble(stack.pop());
+                        double leftSideValue = Double.parseDouble(stack.pop());
+                        double answer = leftSideValue / rightSideValue;
+                        stack.push(Double.toString(answer));
+                        break;
+                    }
                 }
             }
         }
@@ -119,45 +125,47 @@ public class BaseCalculator {
     }
 
     private static ArrayList<String> infixToPostfix(String infixExpression){
-        ArrayList<String> postfixExpression = new ArrayList<String>() ;
-        String operand = "";
-        Stack<Character> stack = new Stack<Character>();
+        ArrayList<String> postfixExpression = new ArrayList<>() ;
+        StringBuilder operand = new StringBuilder();
+        Stack<Character> stack = new Stack<>();
         for(int i = 0; i < infixExpression.length(); i++){
-            if(i < infixExpression.length() - 1){
-                if(Character.compare(infixExpression.charAt(i), ' ') == 0){
+            boolean infixCharIsOperator = infixExpression.charAt(i) == '+' || infixExpression.charAt(i) == '-' || infixExpression.charAt(i) == '*' || infixExpression.charAt(i) == '/';
 
+            if(i < infixExpression.length() - 1){
+                if(infixExpression.charAt(i) == ' '){
+                    continue;
                 }
-                else if(Character.compare(infixExpression.charAt(i), '+') == 0 || Character.compare(infixExpression.charAt(i), '-') == 0 || Character.compare(infixExpression.charAt(i), '*') == 0 || Character.compare(infixExpression.charAt(i), '/') == 0){
-                    while((!stack.isEmpty()) && OfHigherPrecedence(stack.peek().charValue(), infixExpression.charAt(i))){
+                else if(infixCharIsOperator){
+                    while((!stack.isEmpty()) && OfHigherPrecedence(stack.peek(), infixExpression.charAt(i))){
                         postfixExpression.add(stack.pop().toString());
                     }
 
                     stack.push(infixExpression.charAt(i));
                 }
-                else if(Character.compare(infixExpression.charAt(i + 1), ' ') != 0){
-                    operand += infixExpression.charAt(i);
+                else if(infixExpression.charAt(i + 1) != ' '){
+                    operand.append(infixExpression.charAt(i));
                 }
                 else{
-                    operand += infixExpression.charAt(i);
-                    postfixExpression.add(operand);
-                    operand = "";
+                    operand.append(infixExpression.charAt(i));
+                    postfixExpression.add(operand.toString());
+                    operand = new StringBuilder();
                 }
             }
             else{
-                if(Character.compare(infixExpression.charAt(i), ' ') == 0){
-
+                if(infixExpression.charAt(i) == ' '){
+                    continue;
                 }
-                else if(Character.compare(infixExpression.charAt(i), '+') == 0 || Character.compare(infixExpression.charAt(i), '-') == 0 || Character.compare(infixExpression.charAt(i), '*') == 0 || Character.compare(infixExpression.charAt(i), '/') == 0){
-                    while((!stack.isEmpty()) && OfHigherPrecedence(stack.peek().charValue(), infixExpression.charAt(i))){
+                else if(infixCharIsOperator){
+                        while((!stack.isEmpty()) && OfHigherPrecedence(stack.peek(), infixExpression.charAt(i))){
                         postfixExpression.add(stack.pop().toString());
                     }
 
                     stack.push(infixExpression.charAt(i));
                 }
                 else{
-                    operand += infixExpression.charAt(i);
-                    postfixExpression.add(operand);
-                    operand = "";
+                    operand.append(infixExpression.charAt(i));
+                    postfixExpression.add(operand.toString());
+                    operand = new StringBuilder();
                 }
             }
         }
@@ -170,21 +178,17 @@ public class BaseCalculator {
     }
 
     private static boolean OfHigherPrecedence(char operator1, char operator2) {
-        if (Character.compare(operator1, '+') == 0 || Character.compare(operator1, '-') == 0) {
-            if (Character.compare(operator2, '*') == 0 || Character.compare(operator2, '/') == 0) {
-                return false;
-            } else {
-                return true;
-            }
+        if (operator1 == '+' || operator1 == '-') {
+            return operator2 != '*' && operator2 != '/';
         } else {
             return true;
         }
     }
 
     private static String binaryExpressionToDecimal(String binaryExpression){
-        ArrayList<String> binaryTerms = new ArrayList<String>();
-        ArrayList<String> operators = new ArrayList<String>();
-        ArrayList<String> decimalTerms = new ArrayList<String>();
+        ArrayList<String> binaryTerms = new ArrayList<>();
+        ArrayList<String> operators = new ArrayList<>();
+        ArrayList<String> decimalTerms = new ArrayList<>();
 
         String[] expression = binaryExpression.split(" ");
 
@@ -201,24 +205,24 @@ public class BaseCalculator {
             decimalTerms.add(BaseConverter.binaryToDecimal(term));
         }
 
-        String decimalExpression = "";
+        StringBuilder decimalExpression = new StringBuilder();
 
         for(int i = 0; i < decimalTerms.size() - 1; i++){
-            decimalExpression += decimalTerms.get(i);
-            decimalExpression += " ";
-            decimalExpression += operators.get(i);
-            decimalExpression += " ";
+            decimalExpression.append(decimalTerms.get(i));
+            decimalExpression.append(" ");
+            decimalExpression.append(operators.get(i));
+            decimalExpression.append(" ");
         }
 
-        decimalExpression += decimalTerms.get(decimalTerms.size() - 1);
+        decimalExpression.append(decimalTerms.get(decimalTerms.size() - 1));
 
-        return decimalExpression;
+        return decimalExpression.toString();
     }
 
     private static String hexExpressionToDecimal(String hexExpression){
-        ArrayList<String> hexTerms = new ArrayList<String>();
-        ArrayList<String> operators = new ArrayList<String>();
-        ArrayList<String> decimalTerms = new ArrayList<String>();
+        ArrayList<String> hexTerms = new ArrayList<>();
+        ArrayList<String> operators = new ArrayList<>();
+        ArrayList<String> decimalTerms = new ArrayList<>();
 
         String[] expression = hexExpression.split(" ");
 
@@ -235,17 +239,17 @@ public class BaseCalculator {
             decimalTerms.add(BaseConverter.hexToDecimal(term));
         }
 
-        String decimalExpression = "";
+        StringBuilder decimalExpression = new StringBuilder();
 
         for(int i = 0; i < decimalTerms.size() - 1; i++){
-            decimalExpression += decimalTerms.get(i);
-            decimalExpression += " ";
-            decimalExpression += operators.get(i);
-            decimalExpression += " ";
+            decimalExpression.append(decimalTerms.get(i));
+            decimalExpression.append(" ");
+            decimalExpression.append(operators.get(i));
+            decimalExpression.append(" ");
         }
 
-        decimalExpression += decimalTerms.get(decimalTerms.size() - 1);
+        decimalExpression.append(decimalTerms.get(decimalTerms.size() - 1));
 
-        return decimalExpression;
+        return decimalExpression.toString();
     }
 }

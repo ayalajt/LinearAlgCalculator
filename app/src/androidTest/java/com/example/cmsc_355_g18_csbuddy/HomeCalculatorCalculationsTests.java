@@ -4,26 +4,20 @@ import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
-import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
+
 import androidx.test.rule.ActivityTestRule;
-import androidx.test.runner.AndroidJUnit4;
 
 import org.junit.Rule;
-import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.anything;
-import static org.hamcrest.Matchers.hasToString;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.hamcrest.Matchers.is;
 
-@RunWith(AndroidJUnit4.class)
+
 public class HomeCalculatorCalculationsTests {
 
     @Rule public final ActivityTestRule<MainActivity> main= new ActivityTestRule<>(MainActivity.class);
@@ -264,7 +258,7 @@ public class HomeCalculatorCalculationsTests {
         onView(withId(R.id.inputText)).check(matches(withText("0")));
         onView(withId(R.id.answerText)).check(matches(withText("82A * ")));
         onView(withId(R.id.fButton)).perform(click());
-        onView(withId(R.id.fButton)).perform(click());;
+        onView(withId(R.id.fButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("FF")));
         onView(withId(R.id.equalsButton)).perform(click());
         onView(withId(R.id.inputText)).check(matches(withText("0")));
