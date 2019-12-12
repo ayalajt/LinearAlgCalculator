@@ -83,4 +83,33 @@
         <item>long</item>
         <item>short</item>
     </string-array>
+
+
+    <string name="ttInputText">input expression here</string>
+    <string name="defaultTTOutput"><center>  \n
+                            ---------\n
+                             \n
+                            ---------\n
+                             \n
+                            ---------\n
+                             \n
+                            ---------\n
+                             \n
+    </center></string>
+
+    <string name="defaultTT"><center> p | q \n
+                            ---------\n
+                            F | F \n
+                            ---------\n
+                            F | T \n
+                            ---------\n
+                            T | F \n
+                            ---------\n
+                            T | T \n
+    </center></string>
+    <string name="p">p</string>
+    <string name="q">q</string>
+    <string name="and">∧</string>
+    <string name="ttSubmitButton">SUBMIT</string>
+
 </resources>
