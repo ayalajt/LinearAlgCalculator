@@ -9,12 +9,24 @@ During this Iteration G-18 worked on multiple aspects of the our computer scienc
 Brief Report of Iteration 2:
 
 During this iteration G-18 worked on more aspects of out computer science app.  Mark Groves worked on the Combinations and Permutations
-User Story, Jesus Ayala worked on the Matrix Addition and Subtraction User Story, Quinci Cuthbert worked on the Truth Tables User Story,
-Sean Stitzer worked on the Java Data Type Calculator user story, and Cole Delinski worked on the Decimal Calculation User Story and tab
-functionality in the app. While we planned on finishing the Java Data Type Calculator for this iteration which would use a Template design 
-pattern we were unable to get the activity to function properly by the due date. We were however able to finish the Matrix Adition, Decimal
-Calculations, and Permutations and Combinations User Stories so we were still able to get three done. Cole also tried to make the Decimal
-Calculations user story function with a Strategy Design patter however he was unable to figure out how to properly implement that as well.
+User Story, Jesus Ayala worked on the Matrix Addition and Subtraction User Story, Quinci Cuthbert worked on the Truth Tables User 
+Story, Sean Stitzer worked on the Java Data Type Calculator user story, and Cole Delinski worked on the Decimal Calculation User Story 
+and tab functionality in the app. While we planned on finishing the Java Data Type Calculator for this iteration which would use a 
+Template design pattern we were unable to get the activity to function properly by the due date. We were however able to finish the 
+Matrix Adition, Decimal Calculations, and Permutations and Combinations User Stories so we were still able to get three done. Cole also 
+tried to make the Decimal Calculations user story function with a Strategy Design patter however he was unable to figure out how to 
+properly implement that as well.
 
 Brief Report of Iteration 3:
-Sean Stitzer: I didn't change the JavaArithmetic class because having those methods is critical to the design pattern that we have implemented. I also didn't change one area where it wanted me to change an "if" to a "switch-case" because it would be more code which wouldn't do anything of value. Here specifically, I'd rather have the readability over the "efficiency." Nothing else to change, really.
+
+During this iteration G-18 worked on more aspects of our computer science calculator app. Jesus Ayala worked on Matrix Multiplication 
+and Matrix Determinants and UI Coloring, Cole Delinski worked on Binary and Hexadecimal Calculations and the UI Coloring, Sean Stitzer 
+worked on the Java Data Type Calculator, and Quinci Cuthbert worked on Truth Tables. We had some difficulties working with Git causing 
+merge conflicts but besides that we were able to work on our app well this iteration. Our app is now able to do four function operations in binary and hexadecimal, calculate the determinate of a matrix, and perform multiplication of two matrices. 
+
+Lint Warnings We Didn't Fix:
+
+Sean Stitzer: I didn't change the JavaArithmetic class because having those methods is critical to the design pattern that we have 
+implemented. I also didn't change one area where it wanted me to change an "if" to a "switch-case" because it would be more code which 
+wouldn't do anything of value. Here specifically, I'd rather have the readability over the "efficiency." Nothing else to change, 
+really.
