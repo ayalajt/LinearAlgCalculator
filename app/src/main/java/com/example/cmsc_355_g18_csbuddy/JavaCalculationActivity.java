@@ -16,11 +16,9 @@ import android.widget.TextView;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class JavaCalculationActivity extends Fragment{
-
-    private Spinner primitiveTypesSpinner1;
-    private Spinner primitiveTypesSpinner2;
 
     private JavaArithmetic.DataTypes t1;
     private JavaArithmetic.DataTypes t2;
@@ -49,11 +47,14 @@ public class JavaCalculationActivity extends Fragment{
             Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.activity_java_calculation, container, false);
 
-        List<JavaArithmetic.DataTypes> primitveDataTypes = Arrays.asList(JavaArithmetic.DataTypes.values());
+        Spinner primitiveTypesSpinner1;
+        Spinner primitiveTypesSpinner2;
+
+        List<JavaArithmetic.DataTypes> primitiveDataTypes = Arrays.asList(JavaArithmetic.DataTypes.values());
 
         primitiveTypesSpinner1 = root.findViewById(R.id.spinner1);
-        ArrayAdapter<JavaArithmetic.DataTypes> adapter1 = new ArrayAdapter<JavaArithmetic.DataTypes>(this.getActivity(),
-                android.R.layout.simple_spinner_item, primitveDataTypes);
+        ArrayAdapter<JavaArithmetic.DataTypes> adapter1 = new ArrayAdapter<>(Objects.requireNonNull(this.getActivity()),
+                android.R.layout.simple_spinner_item, primitiveDataTypes);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primitiveTypesSpinner1.setAdapter(adapter1);
         primitiveTypesSpinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -69,8 +70,8 @@ public class JavaCalculationActivity extends Fragment{
         });
 
         primitiveTypesSpinner2 = root.findViewById(R.id.spinner2);
-        ArrayAdapter<JavaArithmetic.DataTypes> adapter2 = new ArrayAdapter<JavaArithmetic.DataTypes>(this.getActivity(),
-                android.R.layout.simple_spinner_item, primitveDataTypes);
+        ArrayAdapter<JavaArithmetic.DataTypes> adapter2 = new ArrayAdapter<>(this.getActivity(),
+                android.R.layout.simple_spinner_item, primitiveDataTypes);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         primitiveTypesSpinner2.setAdapter(adapter2);
         primitiveTypesSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
